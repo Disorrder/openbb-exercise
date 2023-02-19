@@ -1,19 +1,17 @@
 import React from "react";
 import Head from "next/head";
+import { useQuery } from "react-query";
 
-import { TreeProvider, useTree } from "../context/tree.context";
-import { transform } from "../utils/transform";
-import { IStat } from "../utils/stats.type";
-
+import { TreeProvider } from "../context/tree.context";
 import TreeView from "../components/TreeView";
-
-import styles from "../styles/Home.module.css";
-import TRAILMAP from "../utils/trailmap.json";
 import StatForm from "../components/StatForm";
 
+import styles from "../styles/Home.module.css";
+
 export default function Home(): React.ReactElement {
-  const trailmapTransformed = transform<IStat>(TRAILMAP as any);
-  // console.log(trailmapTransformed);
+  const { data } = useQuery("data", async () =>
+    fetch("/api/data").then((res) => res.json())
+  );
 
   return (
     <TreeProvider>
@@ -29,7 +27,7 @@ export default function Home(): React.ReactElement {
 
         <div className={styles.content}>
           <aside className={styles.sidebar}>
-            <TreeView value={trailmapTransformed} />
+            <TreeView data={data} />
           </aside>
           <main className={styles.main}>
             <StatForm />
