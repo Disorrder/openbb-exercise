@@ -1,0 +1,11 @@
+.TreeView:before {
+  content: "";
+  display: block;
+  height: var(--gap-before);
+}
+
+.TreeView:after {
+  content: "";
+  display: block;
+  height: var(--gap-after);
+}
