@@ -1,0 +1,8157 @@
+{
+  "alt": {
+    "covid": {
+      "global_cases": {
+        "trailmap": "alt.covid.global_cases",
+        "parms": {
+          "country": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "global_deaths": {
+        "trailmap": "alt.covid.global_deaths",
+        "parms": {
+          "country": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "ov": {
+        "trailmap": "alt.covid.ov",
+        "parms": {
+          "country": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "limit": {
+            "type": "int",
+            "default": 100,
+            "required": false
+          }
+        }
+      },
+      "slopes": {
+        "trailmap": "alt.covid.slopes",
+        "parms": {
+          "days_back": {
+            "type": "int",
+            "default": 30,
+            "required": false
+          },
+          "limit": {
+            "type": "int",
+            "default": 50,
+            "required": false
+          },
+          "threshold": {
+            "type": "int",
+            "default": 10000,
+            "required": false
+          },
+          "ascend": {
+            "type": "bool",
+            "default": false,
+            "required": false
+          }
+        }
+      },
+      "stat": {
+        "trailmap": "alt.covid.stat",
+        "parms": {
+          "country": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "stat": {
+            "type": "str",
+            "default": "cases",
+            "required": false
+          },
+          "limit": {
+            "type": "int",
+            "default": 10,
+            "required": false
+          }
+        }
+      }
+    },
+    "oss": {
+      "_make_request": {
+        "trailmap": "alt.oss._make_request",
+        "parms": {
+          "url": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "_retry_session": {
+        "trailmap": "alt.oss._retry_session",
+        "parms": {
+          "url": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "retries": {
+            "type": "int",
+            "default": 3,
+            "required": false
+          },
+          "backoff_factor": {
+            "type": "float",
+            "default": 1,
+            "required": false
+          }
+        }
+      },
+      "github_data": {
+        "trailmap": "alt.oss.github_data",
+        "parms": {
+          "url": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "kwargs": {
+            "type": "_empty",
+            "default": null,
+            "required": false
+          }
+        }
+      },
+      "history": {
+        "trailmap": "alt.oss.history",
+        "parms": {
+          "repo": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "ross": {
+        "trailmap": "alt.oss.ross",
+        "parms": {}
+      },
+      "search": {
+        "trailmap": "alt.oss.search",
+        "parms": {
+          "sortby": {
+            "type": "str",
+            "default": "stars",
+            "required": false
+          },
+          "page": {
+            "type": "int",
+            "default": 1,
+            "required": false
+          },
+          "categories": {
+            "type": "str",
+            "default": "",
+            "required": false
+          }
+        }
+      },
+      "summary": {
+        "trailmap": "alt.oss.summary",
+        "parms": {
+          "repo": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "top": {
+        "trailmap": "alt.oss.top",
+        "parms": {
+          "sortby": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "limit": {
+            "type": "int",
+            "default": 50,
+            "required": false
+          },
+          "categories": {
+            "type": "str",
+            "default": "",
+            "required": false
+          }
+        }
+      }
+    }
+  },
+  "crypto": {
+    "candle": {
+      "trailmap": "crypto.candle",
+      "parms": {
+        "symbol": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "data": {
+          "type": "DataFrame",
+          "default": null,
+          "required": false
+        },
+        "exchange": {
+          "type": "str",
+          "default": "binance",
+          "required": false
+        },
+        "to_symbol": {
+          "type": "str",
+          "default": "usdt",
+          "required": false
+        },
+        "source": {
+          "type": "str",
+          "default": "CCXT",
+          "required": false
+        },
+        "volume": {
+          "type": "bool",
+          "default": true,
+          "required": false
+        },
+        "ylabel": {
+          "type": "str",
+          "default": "",
+          "required": false
+        },
+        "title": {
+          "type": "str",
+          "default": "",
+          "required": false
+        },
+        "yscale": {
+          "type": "str",
+          "default": "linear",
+          "required": false
+        },
+        "raw": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        }
+      }
+    },
+    "chart": {
+      "trailmap": "crypto.chart",
+      "parms": {
+        "prices_df": {
+          "type": "DataFrame",
+          "default": null,
+          "required": true
+        },
+        "to_symbol": {
+          "type": "str",
+          "default": "",
+          "required": false
+        },
+        "from_symbol": {
+          "type": "str",
+          "default": "",
+          "required": false
+        },
+        "source": {
+          "type": "str",
+          "default": "",
+          "required": false
+        },
+        "exchange": {
+          "type": "str",
+          "default": "",
+          "required": false
+        },
+        "interval": {
+          "type": "str",
+          "default": "",
+          "required": false
+        },
+        "yscale": {
+          "type": "str",
+          "default": "linear",
+          "required": false
+        }
+      }
+    },
+    "dd": {
+      "active": {
+        "trailmap": "crypto.dd.active",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "interval": {
+            "type": "str",
+            "default": "24h",
+            "required": false
+          },
+          "start_date": {
+            "type": "str",
+            "default": "2010-01-01",
+            "required": false
+          }
+        }
+      },
+      "all_binance_trading_pairs": {
+        "trailmap": "crypto.dd.all_binance_trading_pairs",
+        "parms": {}
+      },
+      "balance": {
+        "trailmap": "crypto.dd.balance",
+        "parms": {
+          "from_symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "to_symbol": {
+            "type": "str",
+            "default": "USDT",
+            "required": false
+          }
+        }
+      },
+      "basic": {
+        "trailmap": "crypto.dd.basic",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": "BTC",
+            "required": false
+          }
+        }
+      },
+      "binance_available_quotes_for_each_coin": {
+        "trailmap": "crypto.dd.binance_available_quotes_for_each_coin",
+        "parms": {}
+      },
+      "candle": {
+        "trailmap": "crypto.dd.candle",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "interval": {
+            "type": "str",
+            "default": "24hour",
+            "required": false
+          }
+        }
+      },
+      "change": {
+        "trailmap": "crypto.dd.change",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "exchange": {
+            "type": "str",
+            "default": "binance",
+            "required": false
+          },
+          "start_date": {
+            "type": "str",
+            "default": "2010-01-01",
+            "required": false
+          }
+        }
+      },
+      "check_valid_binance_str": {
+        "trailmap": "crypto.dd.check_valid_binance_str",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "close": {
+        "trailmap": "crypto.dd.close",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "start_date": {
+            "type": "str",
+            "default": "2010-01-01",
+            "required": false
+          },
+          "print_errors": {
+            "type": "bool",
+            "default": true,
+            "required": false
+          }
+        }
+      },
+      "coin": {
+        "trailmap": "crypto.dd.coin",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": "eth-ethereum",
+            "required": false
+          }
+        }
+      },
+      "coin_market_chart": {
+        "trailmap": "crypto.dd.coin_market_chart",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": "",
+            "required": false
+          },
+          "vs_currency": {
+            "type": "str",
+            "default": "usd",
+            "required": false
+          },
+          "days": {
+            "type": "int",
+            "default": 30,
+            "required": false
+          }
+        }
+      },
+      "eb": {
+        "trailmap": "crypto.dd.eb",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "exchange": {
+            "type": "str",
+            "default": "aggregated",
+            "required": false
+          }
+        }
+      },
+      "events": {
+        "trailmap": "crypto.dd.events",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": "BTC",
+            "required": false
+          },
+          "sortby": {
+            "type": "str",
+            "default": "date",
+            "required": false
+          },
+          "ascend": {
+            "type": "bool",
+            "default": false,
+            "required": false
+          }
+        }
+      },
+      "ex": {
+        "trailmap": "crypto.dd.ex",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": "BTC",
+            "required": false
+          },
+          "sortby": {
+            "type": "str",
+            "default": "adjusted_volume_24h_share",
+            "required": false
+          },
+          "ascend": {
+            "type": "bool",
+            "default": true,
+            "required": false
+          }
+        }
+      },
+      "exchanges": {
+        "trailmap": "crypto.dd.exchanges",
+        "parms": {}
+      },
+      "fr": {
+        "trailmap": "crypto.dd.fr",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "get_mt": {
+        "trailmap": "crypto.dd.get_mt",
+        "parms": {
+          "only_free": {
+            "type": "bool",
+            "default": true,
+            "required": false
+          }
+        }
+      },
+      "gh": {
+        "trailmap": "crypto.dd.gh",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "dev_activity": {
+            "type": "bool",
+            "default": false,
+            "required": false
+          },
+          "interval": {
+            "type": "str",
+            "default": "1d",
+            "required": false
+          }
+        }
+      },
+      "gov": {
+        "trailmap": "crypto.dd.gov",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "headlines": {
+        "trailmap": "crypto.dd.headlines",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "inv": {
+        "trailmap": "crypto.dd.inv",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "links": {
+        "trailmap": "crypto.dd.links",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "mcapdom": {
+        "trailmap": "crypto.dd.mcapdom",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "interval": {
+            "type": "str",
+            "default": "1d",
+            "required": false
+          }
+        }
+      },
+      "mkt": {
+        "trailmap": "crypto.dd.mkt",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": "BTC",
+            "required": false
+          },
+          "quotes": {
+            "type": "str",
+            "default": "USD",
+            "required": false
+          },
+          "sortby": {
+            "type": "str",
+            "default": "pct_volume_share",
+            "required": false
+          },
+          "ascend": {
+            "type": "bool",
+            "default": true,
+            "required": false
+          }
+        }
+      },
+      "mt": {
+        "trailmap": "crypto.dd.mt",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "timeseries_id": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "interval": {
+            "type": "str",
+            "default": "1d",
+            "required": false
+          }
+        }
+      },
+      "news": {
+        "trailmap": "crypto.dd.news",
+        "parms": {
+          "limit": {
+            "type": "int",
+            "default": 60,
+            "required": false
+          },
+          "post_kind": {
+            "type": "str",
+            "default": "news",
+            "required": false
+          },
+          "region": {
+            "type": "str",
+            "default": "en",
+            "required": false
+          },
+          "sortby": {
+            "type": "str",
+            "default": "published_at",
+            "required": false
+          },
+          "ascend": {
+            "type": "bool",
+            "default": true,
+            "required": false
+          }
+        }
+      },
+      "nonzero": {
+        "trailmap": "crypto.dd.nonzero",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "start_date": {
+            "type": "str",
+            "default": "2010-01-01",
+            "required": false
+          }
+        }
+      },
+      "ob": {
+        "trailmap": "crypto.dd.ob",
+        "parms": {
+          "exchange": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "to_symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "oi": {
+        "trailmap": "crypto.dd.oi",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "interval": {
+            "type": "int",
+            "default": 0,
+            "required": false
+          }
+        }
+      },
+      "pi": {
+        "trailmap": "crypto.dd.pi",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "pr": {
+        "trailmap": "crypto.dd.pr",
+        "parms": {
+          "main_coin": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "ps": {
+        "trailmap": "crypto.dd.ps",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": "BTC",
+            "required": false
+          },
+          "quotes": {
+            "type": "str",
+            "default": "USD",
+            "required": false
+          }
+        }
+      },
+      "rm": {
+        "trailmap": "crypto.dd.rm",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "ascend": {
+            "type": "bool",
+            "default": true,
+            "required": false
+          }
+        }
+      },
+      "show_available_pairs_for_given_symbol": {
+        "trailmap": "crypto.dd.show_available_pairs_for_given_symbol",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": "ETH",
+            "required": false
+          }
+        }
+      },
+      "stats": {
+        "trailmap": "crypto.dd.stats",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "team": {
+        "trailmap": "crypto.dd.team",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "tk": {
+        "trailmap": "crypto.dd.tk",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "coingecko_id": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "tokenomics": {
+        "trailmap": "crypto.dd.tokenomics",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": "",
+            "required": false
+          }
+        }
+      },
+      "trades": {
+        "trailmap": "crypto.dd.trades",
+        "parms": {
+          "exchange_id": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "to_symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "trading_pair_info": {
+        "trailmap": "crypto.dd.trading_pair_info",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "trading_pairs": {
+        "trailmap": "crypto.dd.trading_pairs",
+        "parms": {}
+      },
+      "twitter": {
+        "trailmap": "crypto.dd.twitter",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": "BTC",
+            "required": false
+          },
+          "sortby": {
+            "type": "str",
+            "default": "date",
+            "required": false
+          },
+          "ascend": {
+            "type": "bool",
+            "default": true,
+            "required": false
+          }
+        }
+      }
+    },
+    "defi": {
+      "anchor_data": {
+        "trailmap": "crypto.defi.anchor_data",
+        "parms": {
+          "address": {
+            "type": "str",
+            "default": "",
+            "required": false
+          }
+        }
+      },
+      "aterra": {
+        "trailmap": "crypto.defi.aterra",
+        "parms": {
+          "asset": {
+            "type": "str",
+            "default": "ust",
+            "required": false
+          },
+          "address": {
+            "type": "str",
+            "default": "terra1tmnqgvg567ypvsvk6rwsga3srp7e3lg6u0elp8",
+            "required": false
+          }
+        }
+      },
+      "ayr": {
+        "trailmap": "crypto.defi.ayr",
+        "parms": {}
+      },
+      "dtvl": {
+        "trailmap": "crypto.defi.dtvl",
+        "parms": {
+          "protocol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "gacc": {
+        "trailmap": "crypto.defi.gacc",
+        "parms": {
+          "cumulative": {
+            "type": "bool",
+            "default": true,
+            "required": false
+          }
+        }
+      },
+      "gdapps": {
+        "trailmap": "crypto.defi.gdapps",
+        "parms": {
+          "limit": {
+            "type": "int",
+            "default": 50,
+            "required": false
+          }
+        }
+      },
+      "gov_proposals": {
+        "trailmap": "crypto.defi.gov_proposals",
+        "parms": {
+          "status": {
+            "type": "str",
+            "default": "",
+            "required": false
+          },
+          "sortby": {
+            "type": "str",
+            "default": "id",
+            "required": false
+          },
+          "ascend": {
+            "type": "bool",
+            "default": true,
+            "required": false
+          },
+          "limit": {
+            "type": "int",
+            "default": 10,
+            "required": false
+          }
+        }
+      },
+      "ldapps": {
+        "trailmap": "crypto.defi.ldapps",
+        "parms": {
+          "limit": {
+            "type": "int",
+            "default": 100,
+            "required": false
+          },
+          "sortby": {
+            "type": "str",
+            "default": "",
+            "required": false
+          },
+          "ascend": {
+            "type": "bool",
+            "default": false,
+            "required": false
+          },
+          "description": {
+            "type": "bool",
+            "default": false,
+            "required": false
+          },
+          "drop_chain": {
+            "type": "bool",
+            "default": true,
+            "required": false
+          }
+        }
+      },
+      "luna_supply": {
+        "trailmap": "crypto.defi.luna_supply",
+        "parms": {
+          "supply_type": {
+            "type": "str",
+            "default": "lunaSupplyChallengeStats",
+            "required": false
+          },
+          "days": {
+            "type": "int",
+            "default": 30,
+            "required": false
+          }
+        }
+      },
+      "newsletters": {
+        "trailmap": "crypto.defi.newsletters",
+        "parms": {}
+      },
+      "pairs": {
+        "trailmap": "crypto.defi.pairs",
+        "parms": {
+          "last_days": {
+            "type": "int",
+            "default": 14,
+            "required": false
+          },
+          "min_volume": {
+            "type": "int",
+            "default": 100,
+            "required": false
+          },
+          "min_liquidity": {
+            "type": "int",
+            "default": 0,
+            "required": false
+          },
+          "min_tx": {
+            "type": "int",
+            "default": 100,
+            "required": false
+          }
+        }
+      },
+      "pools": {
+        "trailmap": "crypto.defi.pools",
+        "parms": {}
+      },
+      "sinfo": {
+        "trailmap": "crypto.defi.sinfo",
+        "parms": {
+          "address": {
+            "type": "str",
+            "default": "",
+            "required": false
+          }
+        }
+      },
+      "sratio": {
+        "trailmap": "crypto.defi.sratio",
+        "parms": {
+          "limit": {
+            "type": "int",
+            "default": 200,
+            "required": false
+          }
+        }
+      },
+      "sreturn": {
+        "trailmap": "crypto.defi.sreturn",
+        "parms": {
+          "limit": {
+            "type": "int",
+            "default": 200,
+            "required": false
+          }
+        }
+      },
+      "stats": {
+        "trailmap": "crypto.defi.stats",
+        "parms": {}
+      },
+      "stvl": {
+        "trailmap": "crypto.defi.stvl",
+        "parms": {}
+      },
+      "swaps": {
+        "trailmap": "crypto.defi.swaps",
+        "parms": {
+          "limit": {
+            "type": "int",
+            "default": 100,
+            "required": false
+          },
+          "sortby": {
+            "type": "str",
+            "default": "timestamp",
+            "required": false
+          },
+          "ascend": {
+            "type": "bool",
+            "default": false,
+            "required": false
+          }
+        }
+      },
+      "tokens": {
+        "trailmap": "crypto.defi.tokens",
+        "parms": {
+          "skip": {
+            "type": "int",
+            "default": 0,
+            "required": false
+          },
+          "limit": {
+            "type": "int",
+            "default": 100,
+            "required": false
+          },
+          "sortby": {
+            "type": "str",
+            "default": "index",
+            "required": false
+          },
+          "ascend": {
+            "type": "bool",
+            "default": false,
+            "required": false
+          }
+        }
+      },
+      "validators": {
+        "trailmap": "crypto.defi.validators",
+        "parms": {
+          "sortby": {
+            "type": "str",
+            "default": "votingPower",
+            "required": false
+          },
+          "ascend": {
+            "type": "bool",
+            "default": true,
+            "required": false
+          }
+        }
+      },
+      "vaults": {
+        "trailmap": "crypto.defi.vaults",
+        "parms": {
+          "ascend": {
+            "type": "bool",
+            "default": true,
+            "required": false
+          },
+          "sortby": {
+            "type": "str",
+            "default": "apy",
+            "required": false
+          }
+        }
+      }
+    },
+    "disc": {
+      "categories_keys": {
+        "trailmap": "crypto.disc.categories_keys",
+        "parms": {}
+      },
+      "coin_list": {
+        "trailmap": "crypto.disc.coin_list",
+        "parms": {}
+      },
+      "coins": {
+        "trailmap": "crypto.disc.coins",
+        "parms": {
+          "limit": {
+            "type": "int",
+            "default": 250,
+            "required": false
+          },
+          "category": {
+            "type": "str",
+            "default": "",
+            "required": false
+          },
+          "sortby": {
+            "type": "str",
+            "default": "Symbol",
+            "required": false
+          },
+          "ascend": {
+            "type": "bool",
+            "default": false,
+            "required": false
+          }
+        }
+      },
+      "coins_for_given_exchange": {
+        "trailmap": "crypto.disc.coins_for_given_exchange",
+        "parms": {
+          "exchange_id": {
+            "type": "str",
+            "default": "binance",
+            "required": false
+          },
+          "page": {
+            "type": "int",
+            "default": 1,
+            "required": false
+          }
+        }
+      },
+      "cpsearch": {
+        "trailmap": "crypto.disc.cpsearch",
+        "parms": {
+          "query": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "sortby": {
+            "type": "str",
+            "default": "id",
+            "required": false
+          },
+          "ascend": {
+            "type": "bool",
+            "default": true,
+            "required": false
+          }
+        }
+      },
+      "gainers": {
+        "trailmap": "crypto.disc.gainers",
+        "parms": {
+          "interval": {
+            "type": "str",
+            "default": "1h",
+            "required": false
+          },
+          "limit": {
+            "type": "int",
+            "default": 50,
+            "required": false
+          },
+          "sortby": {
+            "type": "str",
+            "default": "market_cap_rank",
+            "required": false
+          }
+        }
+      },
+      "losers": {
+        "trailmap": "crypto.disc.losers",
+        "parms": {
+          "interval": {
+            "type": "str",
+            "default": "1h",
+            "required": false
+          },
+          "limit": {
+            "type": "int",
+            "default": 50,
+            "required": false
+          },
+          "sortby": {
+            "type": "str",
+            "default": "market_cap_rank",
+            "required": false
+          }
+        }
+      },
+      "top_coins": {
+        "trailmap": "crypto.disc.top_coins",
+        "parms": {
+          "source": {
+            "type": "str",
+            "default": "CoinGecko",
+            "required": false
+          },
+          "limit": {
+            "type": "int",
+            "default": 10,
+            "required": false
+          }
+        }
+      },
+      "top_dapps": {
+        "trailmap": "crypto.disc.top_dapps",
+        "parms": {
+          "sortby": {
+            "type": "str",
+            "default": "",
+            "required": false
+          },
+          "limit": {
+            "type": "int",
+            "default": 10,
+            "required": false
+          }
+        }
+      },
+      "top_dexes": {
+        "trailmap": "crypto.disc.top_dexes",
+        "parms": {
+          "sortby": {
+            "type": "str",
+            "default": "",
+            "required": false
+          },
+          "limit": {
+            "type": "int",
+            "default": 10,
+            "required": false
+          }
+        }
+      },
+      "top_games": {
+        "trailmap": "crypto.disc.top_games",
+        "parms": {
+          "sortby": {
+            "type": "str",
+            "default": "",
+            "required": false
+          },
+          "limit": {
+            "type": "int",
+            "default": 10,
+            "required": false
+          }
+        }
+      },
+      "top_nfts": {
+        "trailmap": "crypto.disc.top_nfts",
+        "parms": {
+          "sortby": {
+            "type": "str",
+            "default": "",
+            "required": false
+          },
+          "limit": {
+            "type": "int",
+            "default": 10,
+            "required": false
+          }
+        }
+      },
+      "trending": {
+        "trailmap": "crypto.disc.trending",
+        "parms": {}
+      }
+    },
+    "find": {
+      "trailmap": "crypto.find",
+      "parms": {
+        "query": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "source": {
+          "type": "str",
+          "default": "CoinGecko",
+          "required": false
+        },
+        "key": {
+          "type": "str",
+          "default": "symbol",
+          "required": false
+        },
+        "limit": {
+          "type": "int",
+          "default": 10,
+          "required": false
+        }
+      }
+    },
+    "load": {
+      "trailmap": "crypto.load",
+      "parms": {
+        "symbol": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "exchange": {
+          "type": "str",
+          "default": "binance",
+          "required": false
+        },
+        "to_symbol": {
+          "type": "str",
+          "default": "usdt",
+          "required": false
+        },
+        "source": {
+          "type": "str",
+          "default": "CCXT",
+          "required": false
+        }
+      }
+    },
+    "nft": {
+      "collections": {
+        "trailmap": "crypto.nft.collections",
+        "parms": {}
+      },
+      "fp": {
+        "trailmap": "crypto.nft.fp",
+        "parms": {
+          "slug": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "stats": {
+        "trailmap": "crypto.nft.stats",
+        "parms": {
+          "slug": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      }
+    },
+    "onchain": {
+      "baas": {
+        "trailmap": "crypto.onchain.baas",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": "WETH",
+            "required": false
+          },
+          "to_symbol": {
+            "type": "str",
+            "default": "USDT",
+            "required": false
+          },
+          "limit": {
+            "type": "int",
+            "default": 10,
+            "required": false
+          },
+          "sortby": {
+            "type": "str",
+            "default": "date",
+            "required": false
+          },
+          "ascend": {
+            "type": "bool",
+            "default": true,
+            "required": false
+          }
+        }
+      },
+      "balance": {
+        "trailmap": "crypto.onchain.balance",
+        "parms": {
+          "address": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "sortby": {
+            "type": "str",
+            "default": "index",
+            "required": false
+          },
+          "ascend": {
+            "type": "bool",
+            "default": false,
+            "required": false
+          }
+        }
+      },
+      "btc_supply": {
+        "trailmap": "crypto.onchain.btc_supply",
+        "parms": {}
+      },
+      "btc_transac": {
+        "trailmap": "crypto.onchain.btc_transac",
+        "parms": {}
+      },
+      "dex_trades_monthly": {
+        "trailmap": "crypto.onchain.dex_trades_monthly",
+        "parms": {
+          "trade_amount_currency": {
+            "type": "str",
+            "default": "USD",
+            "required": false
+          },
+          "limit": {
+            "type": "int",
+            "default": 90,
+            "required": false
+          },
+          "ascend": {
+            "type": "bool",
+            "default": true,
+            "required": false
+          }
+        }
+      },
+      "dvcp": {
+        "trailmap": "crypto.onchain.dvcp",
+        "parms": {
+          "limit": {
+            "type": "int",
+            "default": 100,
+            "required": false
+          },
+          "symbol": {
+            "type": "str",
+            "default": "UNI",
+            "required": false
+          },
+          "to_symbol": {
+            "type": "str",
+            "default": "USDT",
+            "required": false
+          },
+          "sortby": {
+            "type": "str",
+            "default": "date",
+            "required": false
+          },
+          "ascend": {
+            "type": "bool",
+            "default": true,
+            "required": false
+          }
+        }
+      },
+      "erc20_tokens": {
+        "trailmap": "crypto.onchain.erc20_tokens",
+        "parms": {}
+      },
+      "gwei": {
+        "trailmap": "crypto.onchain.gwei",
+        "parms": {}
+      },
+      "hist": {
+        "trailmap": "crypto.onchain.hist",
+        "parms": {
+          "address": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "sortby": {
+            "type": "str",
+            "default": "timestamp",
+            "required": false
+          },
+          "ascend": {
+            "type": "bool",
+            "default": true,
+            "required": false
+          }
+        }
+      },
+      "holders": {
+        "trailmap": "crypto.onchain.holders",
+        "parms": {
+          "address": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "sortby": {
+            "type": "str",
+            "default": "balance",
+            "required": false
+          },
+          "ascend": {
+            "type": "bool",
+            "default": true,
+            "required": false
+          }
+        }
+      },
+      "hr": {
+        "trailmap": "crypto.onchain.hr",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "interval": {
+            "type": "str",
+            "default": "24h",
+            "required": false
+          },
+          "start_date": {
+            "type": "str",
+            "default": "2010-01-01",
+            "required": false
+          }
+        }
+      },
+      "info": {
+        "trailmap": "crypto.onchain.info",
+        "parms": {
+          "address": {
+            "type": "_empty",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "lt": {
+        "trailmap": "crypto.onchain.lt",
+        "parms": {
+          "trade_amount_currency": {
+            "type": "str",
+            "default": "USD",
+            "required": false
+          },
+          "limit": {
+            "type": "int",
+            "default": 90,
+            "required": false
+          },
+          "sortby": {
+            "type": "str",
+            "default": "tradeAmount",
+            "required": false
+          },
+          "ascend": {
+            "type": "bool",
+            "default": true,
+            "required": false
+          }
+        }
+      },
+      "prices": {
+        "trailmap": "crypto.onchain.prices",
+        "parms": {
+          "address": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "sortby": {
+            "type": "str",
+            "default": "date",
+            "required": false
+          },
+          "ascend": {
+            "type": "bool",
+            "default": false,
+            "required": false
+          }
+        }
+      },
+      "query_graph": {
+        "trailmap": "crypto.onchain.query_graph",
+        "parms": {
+          "url": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "query": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "th": {
+        "trailmap": "crypto.onchain.th",
+        "parms": {
+          "address": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "sortby": {
+            "type": "str",
+            "default": "timestamp",
+            "required": false
+          },
+          "ascend": {
+            "type": "bool",
+            "default": false,
+            "required": false
+          }
+        }
+      },
+      "token_decimals": {
+        "trailmap": "crypto.onchain.token_decimals",
+        "parms": {
+          "address": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "top": {
+        "trailmap": "crypto.onchain.top",
+        "parms": {
+          "sortby": {
+            "type": "str",
+            "default": "rank",
+            "required": false
+          },
+          "ascend": {
+            "type": "bool",
+            "default": false,
+            "required": false
+          }
+        }
+      },
+      "ttcp": {
+        "trailmap": "crypto.onchain.ttcp",
+        "parms": {
+          "network": {
+            "type": "str",
+            "default": "ethereum",
+            "required": false
+          },
+          "exchange": {
+            "type": "str",
+            "default": "Uniswap",
+            "required": false
+          },
+          "limit": {
+            "type": "int",
+            "default": 90,
+            "required": false
+          },
+          "sortby": {
+            "type": "str",
+            "default": "tradeAmount",
+            "required": false
+          },
+          "ascend": {
+            "type": "bool",
+            "default": true,
+            "required": false
+          }
+        }
+      },
+      "tv": {
+        "trailmap": "crypto.onchain.tv",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": "UNI",
+            "required": false
+          },
+          "trade_amount_currency": {
+            "type": "str",
+            "default": "USD",
+            "required": false
+          },
+          "sortby": {
+            "type": "str",
+            "default": "tradeAmount",
+            "required": false
+          },
+          "ascend": {
+            "type": "bool",
+            "default": true,
+            "required": false
+          }
+        }
+      },
+      "tx": {
+        "trailmap": "crypto.onchain.tx",
+        "parms": {
+          "tx_hash": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "ueat": {
+        "trailmap": "crypto.onchain.ueat",
+        "parms": {
+          "interval": {
+            "type": "str",
+            "default": "day",
+            "required": false
+          },
+          "limit": {
+            "type": "int",
+            "default": 90,
+            "required": false
+          },
+          "sortby": {
+            "type": "str",
+            "default": "tradeAmount",
+            "required": false
+          },
+          "ascend": {
+            "type": "bool",
+            "default": true,
+            "required": false
+          }
+        }
+      },
+      "whales": {
+        "trailmap": "crypto.onchain.whales",
+        "parms": {
+          "min_value": {
+            "type": "int",
+            "default": 800000,
+            "required": false
+          },
+          "limit": {
+            "type": "int",
+            "default": 100,
+            "required": false
+          },
+          "sortby": {
+            "type": "str",
+            "default": "date",
+            "required": false
+          },
+          "ascend": {
+            "type": "bool",
+            "default": false,
+            "required": false
+          }
+        }
+      }
+    },
+    "ov": {
+      "altindex": {
+        "trailmap": "crypto.ov.altindex",
+        "parms": {
+          "period": {
+            "type": "int",
+            "default": 30,
+            "required": false
+          },
+          "start_date": {
+            "type": "str",
+            "default": "2010-01-01",
+            "required": false
+          }
+        }
+      },
+      "btcrb": {
+        "trailmap": "crypto.ov.btcrb",
+        "parms": {
+          "start_date": {
+            "type": "str",
+            "default": "2010-01-01",
+            "required": false
+          }
+        }
+      },
+      "categories": {
+        "trailmap": "crypto.ov.categories",
+        "parms": {
+          "sort_filter": {
+            "type": "str",
+            "default": "market_cap_desc",
+            "required": false
+          }
+        }
+      },
+      "cbpairs": {
+        "trailmap": "crypto.ov.cbpairs",
+        "parms": {
+          "limit": {
+            "type": "int",
+            "default": 50,
+            "required": false
+          },
+          "sortby": {
+            "type": "str",
+            "default": "quote_increment",
+            "required": false
+          },
+          "ascend": {
+            "type": "bool",
+            "default": true,
+            "required": false
+          }
+        }
+      },
+      "coin_list": {
+        "trailmap": "crypto.ov.coin_list",
+        "parms": {}
+      },
+      "contracts": {
+        "trailmap": "crypto.ov.contracts",
+        "parms": {
+          "platform_id": {
+            "type": "str",
+            "default": "eth-ethereum",
+            "required": false
+          },
+          "sortby": {
+            "type": "str",
+            "default": "active",
+            "required": false
+          },
+          "ascend": {
+            "type": "bool",
+            "default": true,
+            "required": false
+          }
+        }
+      },
+      "cr": {
+        "trailmap": "crypto.ov.cr",
+        "parms": {
+          "rate_type": {
+            "type": "str",
+            "default": "borrow",
+            "required": false
+          }
+        }
+      },
+      "crypto_hack": {
+        "trailmap": "crypto.ov.crypto_hack",
+        "parms": {
+          "slug": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "crypto_hack_slugs": {
+        "trailmap": "crypto.ov.crypto_hack_slugs",
+        "parms": {}
+      },
+      "crypto_hacks": {
+        "trailmap": "crypto.ov.crypto_hacks",
+        "parms": {
+          "sortby": {
+            "type": "str",
+            "default": "Platform",
+            "required": false
+          },
+          "ascend": {
+            "type": "bool",
+            "default": false,
+            "required": false
+          }
+        }
+      },
+      "defi": {
+        "trailmap": "crypto.ov.defi",
+        "parms": {}
+      },
+      "derivatives": {
+        "trailmap": "crypto.ov.derivatives",
+        "parms": {
+          "sortby": {
+            "type": "str",
+            "default": "Rank",
+            "required": false
+          },
+          "ascend": {
+            "type": "bool",
+            "default": false,
+            "required": false
+          }
+        }
+      },
+      "ewf": {
+        "trailmap": "crypto.ov.ewf",
+        "parms": {}
+      },
+      "exchanges": {
+        "trailmap": "crypto.ov.exchanges",
+        "parms": {
+          "source": {
+            "type": "str",
+            "default": "CoinGecko",
+            "required": false
+          }
+        }
+      },
+      "exmarkets": {
+        "trailmap": "crypto.ov.exmarkets",
+        "parms": {
+          "exchange_id": {
+            "type": "str",
+            "default": "binance",
+            "required": false
+          },
+          "symbols": {
+            "type": "str",
+            "default": "USD",
+            "required": false
+          },
+          "sortby": {
+            "type": "str",
+            "default": "pair",
+            "required": false
+          },
+          "ascend": {
+            "type": "bool",
+            "default": true,
+            "required": false
+          }
+        }
+      },
+      "exrates": {
+        "trailmap": "crypto.ov.exrates",
+        "parms": {
+          "sortby": {
+            "type": "str",
+            "default": "Name",
+            "required": false
+          },
+          "ascend": {
+            "type": "bool",
+            "default": false,
+            "required": false
+          }
+        }
+      },
+      "globe": {
+        "trailmap": "crypto.ov.globe",
+        "parms": {
+          "source": {
+            "type": "str",
+            "default": "CoinGecko",
+            "required": false
+          }
+        }
+      },
+      "hm": {
+        "trailmap": "crypto.ov.hm",
+        "parms": {
+          "limit": {
+            "type": "int",
+            "default": 250,
+            "required": false
+          },
+          "category": {
+            "type": "str",
+            "default": "",
+            "required": false
+          },
+          "sortby": {
+            "type": "str",
+            "default": "Symbol",
+            "required": false
+          },
+          "ascend": {
+            "type": "bool",
+            "default": false,
+            "required": false
+          }
+        }
+      },
+      "hold": {
+        "trailmap": "crypto.ov.hold",
+        "parms": {
+          "endpoint": {
+            "type": "str",
+            "default": "bitcoin",
+            "required": false
+          }
+        }
+      },
+      "indexes": {
+        "trailmap": "crypto.ov.indexes",
+        "parms": {
+          "sortby": {
+            "type": "str",
+            "default": "Name",
+            "required": false
+          },
+          "ascend": {
+            "type": "bool",
+            "default": true,
+            "required": false
+          }
+        }
+      },
+      "info": {
+        "trailmap": "crypto.ov.info",
+        "parms": {
+          "symbols": {
+            "type": "str",
+            "default": "USD",
+            "required": false
+          },
+          "sortby": {
+            "type": "str",
+            "default": "rank",
+            "required": false
+          },
+          "ascend": {
+            "type": "bool",
+            "default": true,
+            "required": false
+          }
+        }
+      },
+      "markets": {
+        "trailmap": "crypto.ov.markets",
+        "parms": {
+          "symbols": {
+            "type": "str",
+            "default": "USD",
+            "required": false
+          },
+          "sortby": {
+            "type": "str",
+            "default": "rank",
+            "required": false
+          },
+          "ascend": {
+            "type": "bool",
+            "default": true,
+            "required": false
+          }
+        }
+      },
+      "news": {
+        "trailmap": "crypto.ov.news",
+        "parms": {
+          "limit": {
+            "type": "int",
+            "default": 60,
+            "required": false
+          },
+          "post_kind": {
+            "type": "str",
+            "default": "news",
+            "required": false
+          },
+          "region": {
+            "type": "str",
+            "default": "en",
+            "required": false
+          },
+          "sortby": {
+            "type": "str",
+            "default": "published_at",
+            "required": false
+          },
+          "ascend": {
+            "type": "bool",
+            "default": true,
+            "required": false
+          }
+        }
+      },
+      "platforms": {
+        "trailmap": "crypto.ov.platforms",
+        "parms": {}
+      },
+      "products": {
+        "trailmap": "crypto.ov.products",
+        "parms": {
+          "sortby": {
+            "type": "str",
+            "default": "Name",
+            "required": false
+          },
+          "ascend": {
+            "type": "bool",
+            "default": true,
+            "required": false
+          }
+        }
+      },
+      "stables": {
+        "trailmap": "crypto.ov.stables",
+        "parms": {
+          "limit": {
+            "type": "int",
+            "default": 15,
+            "required": false
+          },
+          "sortby": {
+            "type": "str",
+            "default": "Market_Cap_[$]",
+            "required": false
+          },
+          "ascend": {
+            "type": "bool",
+            "default": false,
+            "required": false
+          }
+        }
+      },
+      "wf": {
+        "trailmap": "crypto.ov.wf",
+        "parms": {
+          "limit": {
+            "type": "int",
+            "default": 100,
+            "required": false
+          }
+        }
+      },
+      "wfpe": {
+        "trailmap": "crypto.ov.wfpe",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      }
+    },
+    "price": {
+      "trailmap": "crypto.price",
+      "parms": {
+        "symbol": {
+          "type": "str",
+          "default": null,
+          "required": true
+        }
+      }
+    },
+    "tools": {
+      "apy": {
+        "trailmap": "crypto.tools.apy",
+        "parms": {
+          "apr": {
+            "type": "float",
+            "default": null,
+            "required": true
+          },
+          "compounding_times": {
+            "type": "int",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "il": {
+        "trailmap": "crypto.tools.il",
+        "parms": {
+          "price_changeA": {
+            "type": "float",
+            "default": null,
+            "required": true
+          },
+          "price_changeB": {
+            "type": "float",
+            "default": null,
+            "required": true
+          },
+          "proportion": {
+            "type": "float",
+            "default": null,
+            "required": true
+          },
+          "initial_pool_value": {
+            "type": "float",
+            "default": null,
+            "required": true
+          }
+        }
+      }
+    }
+  },
+  "econometrics": {
+    "bgod": {
+      "trailmap": "econometrics.bgod",
+      "parms": {
+        "model": {
+          "type": "DataFrame",
+          "default": null,
+          "required": true
+        },
+        "lags": {
+          "type": "int",
+          "default": 3,
+          "required": false
+        }
+      }
+    },
+    "bols": {
+      "trailmap": "econometrics.bols",
+      "parms": {
+        "Y": {
+          "type": "DataFrame",
+          "default": null,
+          "required": true
+        },
+        "X": {
+          "type": "DataFrame",
+          "default": null,
+          "required": true
+        }
+      }
+    },
+    "bpag": {
+      "trailmap": "econometrics.bpag",
+      "parms": {
+        "model": {
+          "type": "RegressionResultsWrapper",
+          "default": null,
+          "required": true
+        }
+      }
+    },
+    "clean": {
+      "trailmap": "econometrics.clean",
+      "parms": {
+        "dataset": {
+          "type": "DataFrame",
+          "default": null,
+          "required": true
+        },
+        "fill": {
+          "type": "str",
+          "default": "",
+          "required": false
+        },
+        "drop": {
+          "type": "str",
+          "default": "",
+          "required": false
+        }
+      }
+    },
+    "coint": {
+      "trailmap": "econometrics.coint",
+      "parms": {
+        "datasets": {
+          "type": "Series",
+          "default": null,
+          "required": false
+        },
+        "return_z": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        }
+      }
+    },
+    "comparison": {
+      "trailmap": "econometrics.comparison",
+      "parms": {
+        "export": {
+          "type": "str",
+          "default": "",
+          "required": false
+        }
+      }
+    },
+    "dwat": {
+      "trailmap": "econometrics.dwat",
+      "parms": {
+        "model": {
+          "type": "RegressionResultsWrapper",
+          "default": null,
+          "required": true
+        }
+      }
+    },
+    "fdols": {
+      "trailmap": "econometrics.fdols",
+      "parms": {
+        "Y": {
+          "type": "DataFrame",
+          "default": null,
+          "required": true
+        },
+        "X": {
+          "type": "DataFrame",
+          "default": null,
+          "required": true
+        }
+      }
+    },
+    "fe": {
+      "trailmap": "econometrics.fe",
+      "parms": {
+        "Y": {
+          "type": "DataFrame",
+          "default": null,
+          "required": true
+        },
+        "X": {
+          "type": "DataFrame",
+          "default": null,
+          "required": true
+        },
+        "entity_effects": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "time_effects": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        }
+      }
+    },
+    "get_regression_data": {
+      "trailmap": "econometrics.get_regression_data",
+      "parms": {
+        "regression_type": {
+          "type": "str",
+          "default": "",
+          "required": false
+        }
+      }
+    },
+    "granger": {
+      "trailmap": "econometrics.granger",
+      "parms": {
+        "dependent_series": {
+          "type": "Series",
+          "default": null,
+          "required": true
+        },
+        "independent_series": {
+          "type": "Series",
+          "default": null,
+          "required": true
+        },
+        "lags": {
+          "type": "int",
+          "default": 3,
+          "required": false
+        }
+      }
+    },
+    "load": {
+      "trailmap": "econometrics.load",
+      "parms": {
+        "file": {
+          "type": "str",
+          "default": null,
+          "required": true
+        }
+      }
+    },
+    "norm": {
+      "trailmap": "econometrics.norm",
+      "parms": {
+        "data": {
+          "type": "Series",
+          "default": null,
+          "required": true
+        }
+      }
+    },
+    "ols": {
+      "trailmap": "econometrics.ols",
+      "parms": {
+        "Y": {
+          "type": "DataFrame",
+          "default": null,
+          "required": true
+        },
+        "X": {
+          "type": "DataFrame",
+          "default": null,
+          "required": true
+        }
+      }
+    },
+    "options": {
+      "trailmap": "econometrics.options",
+      "parms": {
+        "dataset_name": {
+          "type": "str",
+          "default": "",
+          "required": false
+        }
+      }
+    },
+    "panel": {
+      "trailmap": "econometrics.panel",
+      "parms": {
+        "Y": {
+          "type": "DataFrame",
+          "default": null,
+          "required": true
+        },
+        "X": {
+          "type": "DataFrame",
+          "default": null,
+          "required": true
+        },
+        "regression_type": {
+          "type": "str",
+          "default": "OLS",
+          "required": false
+        },
+        "entity_effects": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "time_effects": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        }
+      }
+    },
+    "pols": {
+      "trailmap": "econometrics.pols",
+      "parms": {
+        "Y": {
+          "type": "DataFrame",
+          "default": null,
+          "required": true
+        },
+        "X": {
+          "type": "DataFrame",
+          "default": null,
+          "required": true
+        }
+      }
+    },
+    "re": {
+      "trailmap": "econometrics.re",
+      "parms": {
+        "Y": {
+          "type": "DataFrame",
+          "default": null,
+          "required": true
+        },
+        "X": {
+          "type": "DataFrame",
+          "default": null,
+          "required": true
+        }
+      }
+    },
+    "root": {
+      "trailmap": "econometrics.root",
+      "parms": {
+        "data": {
+          "type": "Series",
+          "default": null,
+          "required": true
+        },
+        "fuller_reg": {
+          "type": "str",
+          "default": "c",
+          "required": false
+        },
+        "kpss_reg": {
+          "type": "str",
+          "default": "c",
+          "required": false
+        }
+      }
+    }
+  },
+  "economy": {
+    "available_indices": {
+      "trailmap": "economy.available_indices",
+      "parms": {}
+    },
+    "bigmac": {
+      "trailmap": "economy.bigmac",
+      "parms": {}
+    },
+    "country_codes": {
+      "trailmap": "economy.country_codes",
+      "parms": {}
+    },
+    "cpi": {
+      "trailmap": "economy.cpi",
+      "parms": {
+        "interval": {
+          "type": "str",
+          "default": "m",
+          "required": false
+        },
+        "start_year": {
+          "type": "int",
+          "default": 2010,
+          "required": false
+        }
+      }
+    },
+    "currencies": {
+      "trailmap": "economy.currencies",
+      "parms": {}
+    },
+    "events": {
+      "trailmap": "economy.events",
+      "parms": {}
+    },
+    "fred": {
+      "trailmap": "economy.fred",
+      "parms": {}
+    },
+    "fred_ids": {
+      "trailmap": "economy.fred_ids",
+      "parms": {
+        "search_query": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "limit": {
+          "type": "int",
+          "default": -1,
+          "required": false
+        }
+      }
+    },
+    "fred_notes": {
+      "trailmap": "economy.fred_notes",
+      "parms": {
+        "search_query": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "limit": {
+          "type": "int",
+          "default": -1,
+          "required": false
+        }
+      }
+    },
+    "future": {
+      "trailmap": "economy.future",
+      "parms": {
+        "future_type": {
+          "type": "str",
+          "default": "Indices",
+          "required": false
+        },
+        "sortby": {
+          "type": "str",
+          "default": "ticker",
+          "required": false
+        },
+        "ascend": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        }
+      }
+    },
+    "futures": {
+      "trailmap": "economy.futures",
+      "parms": {
+        "source": {
+          "type": "_empty",
+          "default": "WSJ",
+          "required": false
+        },
+        "future_type": {
+          "type": "str",
+          "default": "Indices",
+          "required": false
+        }
+      }
+    },
+    "gdp": {
+      "trailmap": "economy.gdp",
+      "parms": {
+        "interval": {
+          "type": "str",
+          "default": "q",
+          "required": false
+        },
+        "start_year": {
+          "type": "int",
+          "default": 2010,
+          "required": false
+        }
+      }
+    },
+    "gdpc": {
+      "trailmap": "economy.gdpc",
+      "parms": {
+        "start_year": {
+          "type": "int",
+          "default": 2010,
+          "required": false
+        }
+      }
+    },
+    "get_groups": {
+      "trailmap": "economy.get_groups",
+      "parms": {}
+    },
+    "glbonds": {
+      "trailmap": "economy.glbonds",
+      "parms": {}
+    },
+    "index": {
+      "trailmap": "economy.index",
+      "parms": {
+        "indices": {
+          "type": "list",
+          "default": null,
+          "required": true
+        },
+        "interval": {
+          "type": "str",
+          "default": "1d",
+          "required": false
+        },
+        "start_date": {
+          "type": "int",
+          "default": null,
+          "required": false
+        },
+        "end_date": {
+          "type": "int",
+          "default": null,
+          "required": false
+        },
+        "column": {
+          "type": "str",
+          "default": "Adj Close",
+          "required": false
+        },
+        "returns": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        }
+      }
+    },
+    "indices": {
+      "trailmap": "economy.indices",
+      "parms": {}
+    },
+    "inf": {
+      "trailmap": "economy.inf",
+      "parms": {
+        "start_year": {
+          "type": "int",
+          "default": 2010,
+          "required": false
+        }
+      }
+    },
+    "macro": {
+      "trailmap": "economy.macro",
+      "parms": {
+        "parameters": {
+          "type": "list",
+          "default": null,
+          "required": false
+        },
+        "countries": {
+          "type": "list",
+          "default": null,
+          "required": false
+        },
+        "transform": {
+          "type": "str",
+          "default": "",
+          "required": false
+        },
+        "start_date": {
+          "type": "str",
+          "default": "1900-01-01",
+          "required": false
+        },
+        "symbol": {
+          "type": "str",
+          "default": "",
+          "required": false
+        }
+      }
+    },
+    "macro_countries": {
+      "trailmap": "economy.macro_countries",
+      "parms": {}
+    },
+    "macro_parameters": {
+      "trailmap": "economy.macro_parameters",
+      "parms": {}
+    },
+    "overview": {
+      "trailmap": "economy.overview",
+      "parms": {}
+    },
+    "perfmap": {
+      "trailmap": "economy.perfmap",
+      "parms": {
+        "period": {
+          "type": "str",
+          "default": "1d",
+          "required": false
+        },
+        "map_filter": {
+          "type": "str",
+          "default": "sp500",
+          "required": false
+        }
+      }
+    },
+    "performance": {
+      "trailmap": "economy.performance",
+      "parms": {
+        "group": {
+          "type": "str",
+          "default": "sector",
+          "required": false
+        },
+        "sortby": {
+          "type": "str",
+          "default": "Name",
+          "required": false
+        },
+        "ascend": {
+          "type": "bool",
+          "default": true,
+          "required": false
+        }
+      }
+    },
+    "rtps": {
+      "trailmap": "economy.rtps",
+      "parms": {}
+    },
+    "search_index": {
+      "trailmap": "economy.search_index",
+      "parms": {
+        "keyword": {
+          "type": "list",
+          "default": null,
+          "required": true
+        },
+        "limit": {
+          "type": "int",
+          "default": 10,
+          "required": false
+        }
+      }
+    },
+    "spectrum": {
+      "trailmap": "economy.spectrum",
+      "parms": {
+        "group": {
+          "type": "str",
+          "default": "sector",
+          "required": false
+        },
+        "export": {
+          "type": "str",
+          "default": "",
+          "required": false
+        }
+      }
+    },
+    "treasury": {
+      "trailmap": "economy.treasury",
+      "parms": {
+        "instruments": {
+          "type": "list",
+          "default": null,
+          "required": false
+        },
+        "maturities": {
+          "type": "list",
+          "default": null,
+          "required": false
+        },
+        "frequency": {
+          "type": "str",
+          "default": "monthly",
+          "required": false
+        },
+        "start_date": {
+          "type": "str",
+          "default": "1900-01-01",
+          "required": false
+        }
+      }
+    },
+    "treasury_maturities": {
+      "trailmap": "economy.treasury_maturities",
+      "parms": {}
+    },
+    "tyld": {
+      "trailmap": "economy.tyld",
+      "parms": {
+        "interval": {
+          "type": "str",
+          "default": "m",
+          "required": false
+        },
+        "maturity": {
+          "type": "str",
+          "default": "10y",
+          "required": false
+        },
+        "start_date": {
+          "type": "str",
+          "default": "2010-01-01",
+          "required": false
+        }
+      }
+    },
+    "unemp": {
+      "trailmap": "economy.unemp",
+      "parms": {
+        "start_year": {
+          "type": "int",
+          "default": 2010,
+          "required": false
+        }
+      }
+    },
+    "usbonds": {
+      "trailmap": "economy.usbonds",
+      "parms": {}
+    },
+    "valuation": {
+      "trailmap": "economy.valuation",
+      "parms": {
+        "group": {
+          "type": "str",
+          "default": "sector",
+          "required": false
+        },
+        "sortby": {
+          "type": "str",
+          "default": "Name",
+          "required": false
+        },
+        "ascend": {
+          "type": "bool",
+          "default": true,
+          "required": false
+        }
+      }
+    },
+    "ycrv": {
+      "trailmap": "economy.ycrv",
+      "parms": {
+        "date": {
+          "type": "str",
+          "default": null,
+          "required": false
+        }
+      }
+    }
+  },
+  "etf": {
+    "candle": {
+      "trailmap": "etf.candle",
+      "parms": {
+        "symbol": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "data": {
+          "type": "DataFrame",
+          "default": null,
+          "required": false
+        },
+        "use_matplotlib": {
+          "type": "bool",
+          "default": true,
+          "required": false
+        },
+        "intraday": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "add_trend": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "asset_type": {
+          "type": "str",
+          "default": "",
+          "required": false
+        },
+        "interval": {
+          "type": "int",
+          "default": 1440,
+          "required": false
+        },
+        "prepost": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "source": {
+          "type": "str",
+          "default": "YahooFinance",
+          "required": false
+        },
+        "iexrange": {
+          "type": "str",
+          "default": "ytd",
+          "required": false
+        },
+        "weekly": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "monthly": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "raw": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "yscale": {
+          "type": "str",
+          "default": "linear",
+          "required": false
+        }
+      }
+    },
+    "disc": {
+      "mover": {
+        "trailmap": "etf.disc.mover",
+        "parms": {
+          "sort_type": {
+            "type": "str",
+            "default": "gainers",
+            "required": false
+          },
+          "export": {
+            "type": "bool",
+            "default": false,
+            "required": false
+          }
+        }
+      }
+    },
+    "etf_by_category": {
+      "trailmap": "etf.etf_by_category",
+      "parms": {
+        "category": {
+          "type": "str",
+          "default": null,
+          "required": true
+        }
+      }
+    },
+    "etf_by_name": {
+      "trailmap": "etf.etf_by_name",
+      "parms": {
+        "name_to_search": {
+          "type": "str",
+          "default": null,
+          "required": true
+        }
+      }
+    },
+    "holdings": {
+      "trailmap": "etf.holdings",
+      "parms": {
+        "symbol": {
+          "type": "str",
+          "default": null,
+          "required": true
+        }
+      }
+    },
+    "ld": {
+      "trailmap": "etf.ld",
+      "parms": {
+        "description": {
+          "type": "str",
+          "default": null,
+          "required": true
+        }
+      }
+    },
+    "ln": {
+      "trailmap": "etf.ln",
+      "parms": {
+        "name": {
+          "type": "str",
+          "default": null,
+          "required": true
+        }
+      }
+    },
+    "load": {
+      "trailmap": "etf.load",
+      "parms": {
+        "symbol": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "interval": {
+          "type": "int",
+          "default": 1440,
+          "required": false
+        },
+        "prepost": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "source": {
+          "type": "str",
+          "default": "YahooFinance",
+          "required": false
+        },
+        "iexrange": {
+          "type": "str",
+          "default": "ytd",
+          "required": false
+        },
+        "weekly": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "monthly": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "verbose": {
+          "type": "bool",
+          "default": true,
+          "required": false
+        }
+      }
+    },
+    "news": {
+      "trailmap": "etf.news",
+      "parms": {
+        "query": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "limit": {
+          "type": "int",
+          "default": 10,
+          "required": false
+        },
+        "show_newest": {
+          "type": "bool",
+          "default": true,
+          "required": false
+        },
+        "sources": {
+          "type": "str",
+          "default": "",
+          "required": false
+        }
+      }
+    },
+    "overview": {
+      "trailmap": "etf.overview",
+      "parms": {
+        "symbol": {
+          "type": "str",
+          "default": null,
+          "required": true
+        }
+      }
+    },
+    "scr": {
+      "screen": {
+        "trailmap": "etf.scr.screen",
+        "parms": {
+          "preset": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      }
+    },
+    "summary": {
+      "trailmap": "etf.summary",
+      "parms": {
+        "name": {
+          "type": "str",
+          "default": null,
+          "required": true
+        }
+      }
+    },
+    "symbols": {
+      "trailmap": "etf.symbols",
+      "parms": {}
+    },
+    "weights": {
+      "trailmap": "etf.weights",
+      "parms": {
+        "name": {
+          "type": "str",
+          "default": null,
+          "required": true
+        }
+      }
+    }
+  },
+  "forex": {
+    "candle": {
+      "trailmap": "forex.candle",
+      "parms": {
+        "data": {
+          "type": "DataFrame",
+          "default": null,
+          "required": true
+        },
+        "to_symbol": {
+          "type": "str",
+          "default": "",
+          "required": false
+        },
+        "from_symbol": {
+          "type": "str",
+          "default": "",
+          "required": false
+        },
+        "use_matplotlib": {
+          "type": "bool",
+          "default": true,
+          "required": false
+        },
+        "add_trend": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "yscale": {
+          "type": "str",
+          "default": "linear",
+          "required": false
+        }
+      }
+    },
+    "fwd": {
+      "trailmap": "forex.fwd",
+      "parms": {
+        "to_symbol": {
+          "type": "str",
+          "default": "USD",
+          "required": false
+        },
+        "from_symbol": {
+          "type": "str",
+          "default": "EUR",
+          "required": false
+        }
+      }
+    },
+    "get_currency_list": {
+      "trailmap": "forex.get_currency_list",
+      "parms": {}
+    },
+    "load": {
+      "trailmap": "forex.load",
+      "parms": {
+        "to_symbol": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "from_symbol": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "resolution": {
+          "type": "str",
+          "default": "d",
+          "required": false
+        },
+        "interval": {
+          "type": "str",
+          "default": "1day",
+          "required": false
+        },
+        "source": {
+          "type": "str",
+          "default": "YahooFinance",
+          "required": false
+        },
+        "verbose": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        }
+      }
+    },
+    "oanda": {
+      "calendar": {
+        "trailmap": "forex.oanda.calendar",
+        "parms": {
+          "days": {
+            "type": "int",
+            "default": 14,
+            "required": false
+          }
+        }
+      },
+      "cancel": {
+        "trailmap": "forex.oanda.cancel",
+        "parms": {
+          "orderID": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "accountID": {
+            "type": "str",
+            "default": "REPLACE_ME",
+            "required": false
+          }
+        }
+      },
+      "candles": {
+        "trailmap": "forex.oanda.candles",
+        "parms": {
+          "granularity": {
+            "type": "str",
+            "default": "D",
+            "required": false
+          },
+          "candlecount": {
+            "type": "int",
+            "default": 180,
+            "required": false
+          }
+        }
+      },
+      "close": {
+        "trailmap": "forex.oanda.close",
+        "parms": {
+          "orderID": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "accountID": {
+            "type": "str",
+            "default": "REPLACE_ME",
+            "required": false
+          }
+        }
+      },
+      "listorders": {
+        "trailmap": "forex.oanda.listorders",
+        "parms": {
+          "order_state": {
+            "type": "str",
+            "default": "PENDING",
+            "required": false
+          },
+          "order_count": {
+            "type": "int",
+            "default": 0,
+            "required": false
+          },
+          "accountID": {
+            "type": "str",
+            "default": "REPLACE_ME",
+            "required": false
+          }
+        }
+      },
+      "openpositions": {
+        "trailmap": "forex.oanda.openpositions",
+        "parms": {
+          "accountID": {
+            "type": "str",
+            "default": "REPLACE_ME",
+            "required": false
+          }
+        }
+      },
+      "opentrades": {
+        "trailmap": "forex.oanda.opentrades",
+        "parms": {
+          "accountID": {
+            "type": "str",
+            "default": "REPLACE_ME",
+            "required": false
+          }
+        }
+      },
+      "order": {
+        "trailmap": "forex.oanda.order",
+        "parms": {
+          "price": {
+            "type": "int",
+            "default": 0,
+            "required": false
+          },
+          "units": {
+            "type": "int",
+            "default": 0,
+            "required": false
+          },
+          "accountID": {
+            "type": "str",
+            "default": "REPLACE_ME",
+            "required": false
+          }
+        }
+      },
+      "orderbook": {
+        "trailmap": "forex.oanda.orderbook",
+        "parms": {
+          "accountID": {
+            "type": "str",
+            "default": "REPLACE_ME",
+            "required": false
+          }
+        }
+      },
+      "pending": {
+        "trailmap": "forex.oanda.pending",
+        "parms": {
+          "accountID": {
+            "type": "str",
+            "default": "REPLACE_ME",
+            "required": false
+          }
+        }
+      },
+      "positionbook": {
+        "trailmap": "forex.oanda.positionbook",
+        "parms": {
+          "accountID": {
+            "type": "str",
+            "default": "REPLACE_ME",
+            "required": false
+          }
+        }
+      },
+      "price": {
+        "trailmap": "forex.oanda.price",
+        "parms": {
+          "accountID": {
+            "type": "str",
+            "default": "REPLACE_ME",
+            "required": false
+          }
+        }
+      },
+      "summary": {
+        "trailmap": "forex.oanda.summary",
+        "parms": {
+          "accountID": {
+            "type": "str",
+            "default": "REPLACE_ME",
+            "required": false
+          }
+        }
+      }
+    },
+    "quote": {
+      "trailmap": "forex.quote",
+      "parms": {
+        "symbol": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "source": {
+          "type": "str",
+          "default": "YahooFinance",
+          "required": false
+        }
+      }
+    }
+  },
+  "futures": {
+    "curve": {
+      "trailmap": "futures.curve",
+      "parms": {
+        "symbol": {
+          "type": "str",
+          "default": "",
+          "required": false
+        }
+      }
+    },
+    "historical": {
+      "trailmap": "futures.historical",
+      "parms": {
+        "expiry": {
+          "type": "str",
+          "default": "",
+          "required": false
+        }
+      }
+    },
+    "search": {
+      "trailmap": "futures.search",
+      "parms": {
+        "category": {
+          "type": "str",
+          "default": "",
+          "required": false
+        },
+        "exchange": {
+          "type": "str",
+          "default": "",
+          "required": false
+        },
+        "description": {
+          "type": "str",
+          "default": "",
+          "required": false
+        }
+      }
+    }
+  },
+  "keys": {
+    "av": {
+      "trailmap": "keys.av",
+      "parms": {
+        "key": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "persist": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "show_output": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        }
+      }
+    },
+    "binance": {
+      "trailmap": "keys.binance",
+      "parms": {
+        "key": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "secret": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "persist": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "show_output": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        }
+      }
+    },
+    "bitquery": {
+      "trailmap": "keys.bitquery",
+      "parms": {
+        "key": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "persist": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "show_output": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        }
+      }
+    },
+    "cmc": {
+      "trailmap": "keys.cmc",
+      "parms": {
+        "key": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "persist": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "show_output": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        }
+      }
+    },
+    "coinbase": {
+      "trailmap": "keys.coinbase",
+      "parms": {
+        "key": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "secret": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "passphrase": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "persist": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "show_output": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        }
+      }
+    },
+    "coinglass": {
+      "trailmap": "keys.coinglass",
+      "parms": {
+        "key": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "persist": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "show_output": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        }
+      }
+    },
+    "cpanic": {
+      "trailmap": "keys.cpanic",
+      "parms": {
+        "key": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "persist": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "show_output": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        }
+      }
+    },
+    "degiro": {
+      "trailmap": "keys.degiro",
+      "parms": {
+        "username": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "password": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "secret": {
+          "type": "str",
+          "default": "",
+          "required": false
+        },
+        "persist": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "show_output": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        }
+      }
+    },
+    "eodhd": {
+      "trailmap": "keys.eodhd",
+      "parms": {
+        "key": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "persist": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "show_output": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        }
+      }
+    },
+    "ethplorer": {
+      "trailmap": "keys.ethplorer",
+      "parms": {
+        "key": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "persist": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "show_output": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        }
+      }
+    },
+    "finnhub": {
+      "trailmap": "keys.finnhub",
+      "parms": {
+        "key": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "persist": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "show_output": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        }
+      }
+    },
+    "fmp": {
+      "trailmap": "keys.fmp",
+      "parms": {
+        "key": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "persist": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "show_output": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        }
+      }
+    },
+    "fred": {
+      "trailmap": "keys.fred",
+      "parms": {
+        "key": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "persist": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "show_output": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        }
+      }
+    },
+    "get_keys_info": {
+      "trailmap": "keys.get_keys_info",
+      "parms": {}
+    },
+    "github": {
+      "trailmap": "keys.github",
+      "parms": {
+        "key": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "persist": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "show_output": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        }
+      }
+    },
+    "glassnode": {
+      "trailmap": "keys.glassnode",
+      "parms": {
+        "key": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "persist": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "show_output": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        }
+      }
+    },
+    "iex": {
+      "trailmap": "keys.iex",
+      "parms": {
+        "key": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "persist": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "show_output": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        }
+      }
+    },
+    "messari": {
+      "trailmap": "keys.messari",
+      "parms": {
+        "key": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "persist": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "show_output": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        }
+      }
+    },
+    "mykeys": {
+      "trailmap": "keys.mykeys",
+      "parms": {
+        "show": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        }
+      }
+    },
+    "news": {
+      "trailmap": "keys.news",
+      "parms": {
+        "key": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "persist": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "show_output": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        }
+      }
+    },
+    "oanda": {
+      "trailmap": "keys.oanda",
+      "parms": {
+        "account": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "access_token": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "account_type": {
+          "type": "str",
+          "default": "",
+          "required": false
+        },
+        "persist": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "show_output": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        }
+      }
+    },
+    "polygon": {
+      "trailmap": "keys.polygon",
+      "parms": {
+        "key": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "persist": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "show_output": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        }
+      }
+    },
+    "quandl": {
+      "trailmap": "keys.quandl",
+      "parms": {
+        "key": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "persist": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "show_output": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        }
+      }
+    },
+    "reddit": {
+      "trailmap": "keys.reddit",
+      "parms": {
+        "client_id": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "client_secret": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "password": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "username": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "useragent": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "persist": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "show_output": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        }
+      }
+    },
+    "rh": {
+      "trailmap": "keys.rh",
+      "parms": {
+        "username": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "password": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "persist": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "show_output": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        }
+      }
+    },
+    "santiment": {
+      "trailmap": "keys.santiment",
+      "parms": {
+        "key": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "persist": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "show_output": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        }
+      }
+    },
+    "set_keys": {
+      "trailmap": "keys.set_keys",
+      "parms": {
+        "persist": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "show_output": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        }
+      }
+    },
+    "shroom": {
+      "trailmap": "keys.shroom",
+      "parms": {
+        "key": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "persist": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "show_output": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        }
+      }
+    },
+    "si": {
+      "trailmap": "keys.si",
+      "parms": {
+        "key": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "persist": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "show_output": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        }
+      }
+    },
+    "smartstake": {
+      "trailmap": "keys.smartstake",
+      "parms": {
+        "key": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "access_token": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "persist": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "show_output": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        }
+      }
+    },
+    "stocksera": {
+      "trailmap": "keys.stocksera",
+      "parms": {
+        "key": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "persist": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "show_output": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        }
+      }
+    },
+    "tokenterminal": {
+      "trailmap": "keys.tokenterminal",
+      "parms": {
+        "key": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "persist": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "show_output": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        }
+      }
+    },
+    "tradier": {
+      "trailmap": "keys.tradier",
+      "parms": {
+        "key": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "persist": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "show_output": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        }
+      }
+    },
+    "twitter": {
+      "trailmap": "keys.twitter",
+      "parms": {
+        "key": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "secret": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "access_token": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "persist": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "show_output": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        }
+      }
+    },
+    "walert": {
+      "trailmap": "keys.walert",
+      "parms": {
+        "key": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "persist": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "show_output": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        }
+      }
+    }
+  },
+  "news": {
+    "trailmap": "news",
+    "parms": {
+      "term": {
+        "type": "str",
+        "default": "",
+        "required": false
+      },
+      "sources": {
+        "type": "str",
+        "default": "",
+        "required": false
+      },
+      "sort": {
+        "type": "str",
+        "default": "published",
+        "required": false
+      }
+    }
+  },
+  "portfolio": {
+    "alloc": {
+      "assets": {
+        "trailmap": "portfolio.alloc.assets",
+        "parms": {
+          "portfolio_engine": {
+            "type": "PortfolioEngine",
+            "default": null,
+            "required": true
+          },
+          "tables": {
+            "type": "bool",
+            "default": false,
+            "required": false
+          },
+          "limit": {
+            "type": "int",
+            "default": 10,
+            "required": false
+          },
+          "recalculate": {
+            "type": "bool",
+            "default": false,
+            "required": false
+          }
+        }
+      },
+      "countries": {
+        "trailmap": "portfolio.alloc.countries",
+        "parms": {
+          "portfolio_engine": {
+            "type": "PortfolioEngine",
+            "default": null,
+            "required": true
+          },
+          "limit": {
+            "type": "int",
+            "default": 10,
+            "required": false
+          },
+          "tables": {
+            "type": "bool",
+            "default": false,
+            "required": false
+          },
+          "recalculate": {
+            "type": "bool",
+            "default": false,
+            "required": false
+          }
+        }
+      },
+      "regions": {
+        "trailmap": "portfolio.alloc.regions",
+        "parms": {
+          "portfolio_engine": {
+            "type": "PortfolioEngine",
+            "default": null,
+            "required": true
+          },
+          "limit": {
+            "type": "int",
+            "default": 10,
+            "required": false
+          },
+          "tables": {
+            "type": "bool",
+            "default": false,
+            "required": false
+          },
+          "recalculate": {
+            "type": "bool",
+            "default": false,
+            "required": false
+          }
+        }
+      },
+      "sectors": {
+        "trailmap": "portfolio.alloc.sectors",
+        "parms": {
+          "portfolio_engine": {
+            "type": "PortfolioEngine",
+            "default": null,
+            "required": true
+          },
+          "limit": {
+            "type": "int",
+            "default": 10,
+            "required": false
+          },
+          "tables": {
+            "type": "bool",
+            "default": false,
+            "required": false
+          },
+          "recalculate": {
+            "type": "bool",
+            "default": false,
+            "required": false
+          }
+        }
+      }
+    },
+    "bench": {
+      "trailmap": "portfolio.bench",
+      "parms": {
+        "portfolio_engine": {
+          "type": "PortfolioEngine",
+          "default": null,
+          "required": true
+        },
+        "symbol": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "full_shares": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        }
+      }
+    },
+    "distr": {
+      "trailmap": "portfolio.distr",
+      "parms": {
+        "portfolio_engine": {
+          "type": "PortfolioEngine",
+          "default": null,
+          "required": true
+        },
+        "window": {
+          "type": "str",
+          "default": "all",
+          "required": false
+        }
+      }
+    },
+    "dret": {
+      "trailmap": "portfolio.dret",
+      "parms": {
+        "portfolio_engine": {
+          "type": "PortfolioEngine",
+          "default": null,
+          "required": true
+        },
+        "window": {
+          "type": "str",
+          "default": "all",
+          "required": false
+        }
+      }
+    },
+    "es": {
+      "trailmap": "portfolio.es",
+      "parms": {
+        "portfolio_engine": {
+          "type": "PortfolioEngine",
+          "default": null,
+          "required": true
+        },
+        "use_mean": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "distribution": {
+          "type": "str",
+          "default": "normal",
+          "required": false
+        },
+        "percentile": {
+          "type": "float",
+          "default": 99.9,
+          "required": false
+        }
+      }
+    },
+    "holdp": {
+      "trailmap": "portfolio.holdp",
+      "parms": {
+        "portfolio_engine": {
+          "type": "PortfolioEngine",
+          "default": null,
+          "required": true
+        }
+      }
+    },
+    "holdv": {
+      "trailmap": "portfolio.holdv",
+      "parms": {
+        "portfolio_engine": {
+          "type": "PortfolioEngine",
+          "default": null,
+          "required": true
+        }
+      }
+    },
+    "load": {
+      "trailmap": "portfolio.load",
+      "parms": {
+        "transactions_file_path": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "benchmark_symbol": {
+          "type": "str",
+          "default": "SPY",
+          "required": false
+        },
+        "full_shares": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "risk_free_rate": {
+          "type": "float",
+          "default": 0,
+          "required": false
+        }
+      }
+    },
+    "maxdd": {
+      "trailmap": "portfolio.maxdd",
+      "parms": {
+        "portfolio_engine": {
+          "type": "PortfolioEngine",
+          "default": null,
+          "required": true
+        },
+        "is_returns": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        }
+      }
+    },
+    "metric": {
+      "calmar": {
+        "trailmap": "portfolio.metric.calmar",
+        "parms": {
+          "portfolio_engine": {
+            "type": "PortfolioEngine",
+            "default": null,
+            "required": true
+          },
+          "window": {
+            "type": "int",
+            "default": 756,
+            "required": false
+          }
+        }
+      },
+      "commonsense": {
+        "trailmap": "portfolio.metric.commonsense",
+        "parms": {
+          "portfolio_engine": {
+            "type": "PortfolioEngine",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "gaintopain": {
+        "trailmap": "portfolio.metric.gaintopain",
+        "parms": {
+          "portfolio_engine": {
+            "type": "PortfolioEngine",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "information": {
+        "trailmap": "portfolio.metric.information",
+        "parms": {
+          "portfolio_engine": {
+            "type": "PortfolioEngine",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "jensens": {
+        "trailmap": "portfolio.metric.jensens",
+        "parms": {
+          "portfolio_engine": {
+            "type": "PortfolioEngine",
+            "default": null,
+            "required": true
+          },
+          "risk_free_rate": {
+            "type": "float",
+            "default": 0,
+            "required": false
+          },
+          "window": {
+            "type": "str",
+            "default": "1y",
+            "required": false
+          }
+        }
+      },
+      "kelly": {
+        "trailmap": "portfolio.metric.kelly",
+        "parms": {
+          "portfolio_engine": {
+            "type": "PortfolioEngine",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "kurtosis": {
+        "trailmap": "portfolio.metric.kurtosis",
+        "parms": {
+          "portfolio_engine": {
+            "type": "PortfolioEngine",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "maxdrawdown": {
+        "trailmap": "portfolio.metric.maxdrawdown",
+        "parms": {
+          "portfolio_engine": {
+            "type": "PortfolioEngine",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "payoff": {
+        "trailmap": "portfolio.metric.payoff",
+        "parms": {
+          "portfolio_engine": {
+            "type": "PortfolioEngine",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "profitfactor": {
+        "trailmap": "portfolio.metric.profitfactor",
+        "parms": {
+          "portfolio_engine": {
+            "type": "PortfolioEngine",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "rsquare": {
+        "trailmap": "portfolio.metric.rsquare",
+        "parms": {
+          "portfolio_engine": {
+            "type": "PortfolioEngine",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "sharpe": {
+        "trailmap": "portfolio.metric.sharpe",
+        "parms": {
+          "portfolio_engine": {
+            "type": "PortfolioEngine",
+            "default": null,
+            "required": true
+          },
+          "risk_free_rate": {
+            "type": "float",
+            "default": 0,
+            "required": false
+          }
+        }
+      },
+      "skew": {
+        "trailmap": "portfolio.metric.skew",
+        "parms": {
+          "portfolio_engine": {
+            "type": "PortfolioEngine",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "sortino": {
+        "trailmap": "portfolio.metric.sortino",
+        "parms": {
+          "portfolio_engine": {
+            "type": "PortfolioEngine",
+            "default": null,
+            "required": true
+          },
+          "risk_free_rate": {
+            "type": "float",
+            "default": 0,
+            "required": false
+          }
+        }
+      },
+      "tail": {
+        "trailmap": "portfolio.metric.tail",
+        "parms": {
+          "portfolio_engine": {
+            "type": "PortfolioEngine",
+            "default": null,
+            "required": true
+          },
+          "window": {
+            "type": "int",
+            "default": 252,
+            "required": false
+          }
+        }
+      },
+      "trackerr": {
+        "trailmap": "portfolio.metric.trackerr",
+        "parms": {
+          "portfolio_engine": {
+            "type": "PortfolioEngine",
+            "default": null,
+            "required": true
+          },
+          "window": {
+            "type": "int",
+            "default": 252,
+            "required": false
+          }
+        }
+      },
+      "volatility": {
+        "trailmap": "portfolio.metric.volatility",
+        "parms": {
+          "portfolio_engine": {
+            "type": "PortfolioEngine",
+            "default": null,
+            "required": true
+          }
+        }
+      }
+    },
+    "mret": {
+      "trailmap": "portfolio.mret",
+      "parms": {
+        "portfolio_engine": {
+          "type": "PortfolioEngine",
+          "default": null,
+          "required": true
+        },
+        "window": {
+          "type": "str",
+          "default": "all",
+          "required": false
+        }
+      }
+    },
+    "om": {
+      "trailmap": "portfolio.om",
+      "parms": {
+        "portfolio_engine": {
+          "type": "PortfolioEngine",
+          "default": null,
+          "required": true
+        },
+        "threshold_start": {
+          "type": "float",
+          "default": 0,
+          "required": false
+        },
+        "threshold_end": {
+          "type": "float",
+          "default": 1.5,
+          "required": false
+        }
+      }
+    },
+    "perf": {
+      "trailmap": "portfolio.perf",
+      "parms": {
+        "portfolio_engine": {
+          "type": "PortfolioEngine",
+          "default": null,
+          "required": true
+        },
+        "show_all_trades": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        }
+      }
+    },
+    "rbeta": {
+      "trailmap": "portfolio.rbeta",
+      "parms": {
+        "portfolio_engine": {
+          "type": "PortfolioEngine",
+          "default": null,
+          "required": true
+        },
+        "window": {
+          "type": "str",
+          "default": "1y",
+          "required": false
+        }
+      }
+    },
+    "rsharpe": {
+      "trailmap": "portfolio.rsharpe",
+      "parms": {
+        "portfolio_engine": {
+          "type": "DataFrame",
+          "default": null,
+          "required": true
+        },
+        "risk_free_rate": {
+          "type": "float",
+          "default": 0,
+          "required": false
+        },
+        "window": {
+          "type": "str",
+          "default": "1y",
+          "required": false
+        }
+      }
+    },
+    "rsort": {
+      "trailmap": "portfolio.rsort",
+      "parms": {
+        "portfolio_engine": {
+          "type": "PortfolioEngine",
+          "default": null,
+          "required": true
+        },
+        "risk_free_rate": {
+          "type": "float",
+          "default": 0,
+          "required": false
+        },
+        "window": {
+          "type": "str",
+          "default": "1y",
+          "required": false
+        }
+      }
+    },
+    "rvol": {
+      "trailmap": "portfolio.rvol",
+      "parms": {
+        "portfolio_engine": {
+          "type": "PortfolioEngine",
+          "default": null,
+          "required": true
+        },
+        "window": {
+          "type": "str",
+          "default": "1y",
+          "required": false
+        }
+      }
+    },
+    "show": {
+      "trailmap": "portfolio.show",
+      "parms": {
+        "portfolio_engine": {
+          "type": "PortfolioEngine",
+          "default": null,
+          "required": true
+        }
+      }
+    },
+    "summary": {
+      "trailmap": "portfolio.summary",
+      "parms": {
+        "portfolio_engine": {
+          "type": "PortfolioEngine",
+          "default": null,
+          "required": true
+        },
+        "window": {
+          "type": "str",
+          "default": "all",
+          "required": false
+        },
+        "risk_free_rate": {
+          "type": "float",
+          "default": 0,
+          "required": false
+        }
+      }
+    },
+    "var": {
+      "trailmap": "portfolio.var",
+      "parms": {
+        "portfolio_engine": {
+          "type": "PortfolioEngine",
+          "default": null,
+          "required": true
+        },
+        "use_mean": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "adjusted_var": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "student_t": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "percentile": {
+          "type": "float",
+          "default": 99.9,
+          "required": false
+        }
+      }
+    },
+    "yret": {
+      "trailmap": "portfolio.yret",
+      "parms": {
+        "portfolio_engine": {
+          "type": "PortfolioEngine",
+          "default": null,
+          "required": true
+        },
+        "window": {
+          "type": "str",
+          "default": "all",
+          "required": false
+        }
+      }
+    }
+  },
+  "qa": {
+    "acf": {
+      "trailmap": "qa.acf",
+      "parms": {
+        "data": {
+          "type": "DataFrame",
+          "default": null,
+          "required": true
+        },
+        "target": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "symbol": {
+          "type": "str",
+          "default": "",
+          "required": false
+        },
+        "lags": {
+          "type": "int",
+          "default": 15,
+          "required": false
+        }
+      }
+    },
+    "bw": {
+      "trailmap": "qa.bw",
+      "parms": {
+        "data": {
+          "type": "DataFrame",
+          "default": null,
+          "required": true
+        },
+        "target": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "symbol": {
+          "type": "str",
+          "default": "",
+          "required": false
+        },
+        "yearly": {
+          "type": "bool",
+          "default": true,
+          "required": false
+        }
+      }
+    },
+    "calculate_adjusted_var": {
+      "trailmap": "qa.calculate_adjusted_var",
+      "parms": {
+        "kurtosis": {
+          "type": "float",
+          "default": null,
+          "required": true
+        },
+        "skew": {
+          "type": "float",
+          "default": null,
+          "required": true
+        },
+        "ndp": {
+          "type": "float",
+          "default": null,
+          "required": true
+        },
+        "std": {
+          "type": "float",
+          "default": null,
+          "required": true
+        },
+        "mean": {
+          "type": "float",
+          "default": null,
+          "required": true
+        }
+      }
+    },
+    "cdf": {
+      "trailmap": "qa.cdf",
+      "parms": {
+        "data": {
+          "type": "DataFrame",
+          "default": null,
+          "required": true
+        },
+        "target": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "symbol": {
+          "type": "str",
+          "default": "",
+          "required": false
+        },
+        "export": {
+          "type": "str",
+          "default": "",
+          "required": false
+        }
+      }
+    },
+    "cusum": {
+      "trailmap": "qa.cusum",
+      "parms": {
+        "data": {
+          "type": "DataFrame",
+          "default": null,
+          "required": true
+        },
+        "target": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "threshold": {
+          "type": "float",
+          "default": 5,
+          "required": false
+        },
+        "drift": {
+          "type": "float",
+          "default": 2.1,
+          "required": false
+        }
+      }
+    },
+    "decompose": {
+      "trailmap": "qa.decompose",
+      "parms": {
+        "data": {
+          "type": "DataFrame",
+          "default": null,
+          "required": true
+        },
+        "multiplicative": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        }
+      }
+    },
+    "es": {
+      "trailmap": "qa.es",
+      "parms": {
+        "data": {
+          "type": "DataFrame",
+          "default": null,
+          "required": true
+        },
+        "use_mean": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "distribution": {
+          "type": "str",
+          "default": "normal",
+          "required": false
+        },
+        "portfolio": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        }
+      }
+    },
+    "hist": {
+      "trailmap": "qa.hist",
+      "parms": {
+        "data": {
+          "type": "DataFrame",
+          "default": null,
+          "required": true
+        },
+        "target": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "symbol": {
+          "type": "str",
+          "default": "",
+          "required": false
+        },
+        "bins": {
+          "type": "int",
+          "default": 15,
+          "required": false
+        }
+      }
+    },
+    "kurtosis": {
+      "trailmap": "qa.kurtosis",
+      "parms": {
+        "data": {
+          "type": "DataFrame",
+          "default": null,
+          "required": true
+        },
+        "window": {
+          "type": "int",
+          "default": 14,
+          "required": false
+        }
+      }
+    },
+    "line": {
+      "trailmap": "qa.line",
+      "parms": {
+        "data": {
+          "type": "Series",
+          "default": null,
+          "required": true
+        },
+        "title": {
+          "type": "str",
+          "default": "",
+          "required": false
+        },
+        "log_y": {
+          "type": "bool",
+          "default": true,
+          "required": false
+        },
+        "export": {
+          "type": "str",
+          "default": "",
+          "required": false
+        }
+      }
+    },
+    "normality": {
+      "trailmap": "qa.normality",
+      "parms": {
+        "data": {
+          "type": "DataFrame",
+          "default": null,
+          "required": true
+        }
+      }
+    },
+    "omega": {
+      "trailmap": "qa.omega",
+      "parms": {
+        "data": {
+          "type": "DataFrame",
+          "default": null,
+          "required": true
+        },
+        "threshold_start": {
+          "type": "float",
+          "default": 0,
+          "required": false
+        },
+        "threshold_end": {
+          "type": "float",
+          "default": 1.5,
+          "required": false
+        }
+      }
+    },
+    "qqplot": {
+      "trailmap": "qa.qqplot",
+      "parms": {
+        "data": {
+          "type": "DataFrame",
+          "default": null,
+          "required": true
+        },
+        "target": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "symbol": {
+          "type": "str",
+          "default": "",
+          "required": false
+        }
+      }
+    },
+    "quantile": {
+      "trailmap": "qa.quantile",
+      "parms": {
+        "data": {
+          "type": "DataFrame",
+          "default": null,
+          "required": true
+        },
+        "window": {
+          "type": "int",
+          "default": 14,
+          "required": false
+        },
+        "quantile_pct": {
+          "type": "float",
+          "default": 0.5,
+          "required": false
+        }
+      }
+    },
+    "rolling": {
+      "trailmap": "qa.rolling",
+      "parms": {
+        "data": {
+          "type": "DataFrame",
+          "default": null,
+          "required": true
+        },
+        "window": {
+          "type": "int",
+          "default": 14,
+          "required": false
+        }
+      }
+    },
+    "sharpe": {
+      "trailmap": "qa.sharpe",
+      "parms": {
+        "data": {
+          "type": "DataFrame",
+          "default": null,
+          "required": true
+        },
+        "rfr": {
+          "type": "float",
+          "default": 0,
+          "required": false
+        },
+        "window": {
+          "type": "float",
+          "default": 252,
+          "required": false
+        }
+      }
+    },
+    "skew": {
+      "trailmap": "qa.skew",
+      "parms": {
+        "data": {
+          "type": "DataFrame",
+          "default": null,
+          "required": true
+        },
+        "window": {
+          "type": "int",
+          "default": 14,
+          "required": false
+        }
+      }
+    },
+    "sortino": {
+      "trailmap": "qa.sortino",
+      "parms": {
+        "data": {
+          "type": "DataFrame",
+          "default": null,
+          "required": true
+        },
+        "target_return": {
+          "type": "float",
+          "default": 0,
+          "required": false
+        },
+        "window": {
+          "type": "float",
+          "default": 252,
+          "required": false
+        },
+        "adjusted": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        }
+      }
+    },
+    "spread": {
+      "trailmap": "qa.spread",
+      "parms": {
+        "data": {
+          "type": "DataFrame",
+          "default": null,
+          "required": true
+        },
+        "window": {
+          "type": "int",
+          "default": 14,
+          "required": false
+        }
+      }
+    },
+    "summary": {
+      "trailmap": "qa.summary",
+      "parms": {
+        "data": {
+          "type": "DataFrame",
+          "default": null,
+          "required": true
+        }
+      }
+    },
+    "unitroot": {
+      "trailmap": "qa.unitroot",
+      "parms": {
+        "data": {
+          "type": "DataFrame",
+          "default": null,
+          "required": true
+        },
+        "fuller_reg": {
+          "type": "str",
+          "default": "c",
+          "required": false
+        },
+        "kpss_reg": {
+          "type": "str",
+          "default": "c",
+          "required": false
+        }
+      }
+    },
+    "var": {
+      "trailmap": "qa.var",
+      "parms": {
+        "data": {
+          "type": "DataFrame",
+          "default": null,
+          "required": true
+        },
+        "use_mean": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "adjusted_var": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "student_t": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "portfolio": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        }
+      }
+    }
+  },
+  "stocks": {
+    "ba": {
+      "bullbear": {
+        "trailmap": "stocks.ba.bullbear",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "cnews": {
+        "trailmap": "stocks.ba.cnews",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "getdd": {
+        "trailmap": "stocks.ba.getdd",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "limit": {
+            "type": "int",
+            "default": 5,
+            "required": false
+          },
+          "n_days": {
+            "type": "int",
+            "default": 3,
+            "required": false
+          },
+          "show_all_flairs": {
+            "type": "bool",
+            "default": false,
+            "required": false
+          }
+        }
+      },
+      "headlines": {
+        "trailmap": "stocks.ba.headlines",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "hist": {
+        "trailmap": "stocks.ba.hist",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "number": {
+            "type": "int",
+            "default": 100,
+            "required": false
+          }
+        }
+      },
+      "infer": {
+        "trailmap": "stocks.ba.infer",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "limit": {
+            "type": "int",
+            "default": 100,
+            "required": false
+          }
+        }
+      },
+      "mentions": {
+        "trailmap": "stocks.ba.mentions",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "messages": {
+        "trailmap": "stocks.ba.messages",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "limit": {
+            "type": "int",
+            "default": 30,
+            "required": false
+          }
+        }
+      },
+      "popular": {
+        "trailmap": "stocks.ba.popular",
+        "parms": {
+          "limit": {
+            "type": "int",
+            "default": 10,
+            "required": false
+          },
+          "post_limit": {
+            "type": "int",
+            "default": 50,
+            "required": false
+          },
+          "subreddits": {
+            "type": "str",
+            "default": "",
+            "required": false
+          }
+        }
+      },
+      "queries": {
+        "trailmap": "stocks.ba.queries",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "limit": {
+            "type": "int",
+            "default": 10,
+            "required": false
+          }
+        }
+      },
+      "redditsent": {
+        "trailmap": "stocks.ba.redditsent",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "limit": {
+            "type": "int",
+            "default": 100,
+            "required": false
+          },
+          "sortby": {
+            "type": "str",
+            "default": "relevance",
+            "required": false
+          },
+          "time_frame": {
+            "type": "str",
+            "default": "week",
+            "required": false
+          },
+          "full_search": {
+            "type": "bool",
+            "default": true,
+            "required": false
+          },
+          "subreddits": {
+            "type": "str",
+            "default": "all",
+            "required": false
+          }
+        }
+      },
+      "regions": {
+        "trailmap": "stocks.ba.regions",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "rise": {
+        "trailmap": "stocks.ba.rise",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "limit": {
+            "type": "int",
+            "default": 10,
+            "required": false
+          }
+        }
+      },
+      "sentiment": {
+        "trailmap": "stocks.ba.sentiment",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "n_tweets": {
+            "type": "int",
+            "default": 15,
+            "required": false
+          },
+          "n_days_past": {
+            "type": "int",
+            "default": 2,
+            "required": false
+          }
+        }
+      },
+      "snews": {
+        "trailmap": "stocks.ba.snews",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "spac": {
+        "trailmap": "stocks.ba.spac",
+        "parms": {
+          "limit": {
+            "type": "int",
+            "default": 5,
+            "required": false
+          }
+        }
+      },
+      "spacc": {
+        "trailmap": "stocks.ba.spacc",
+        "parms": {
+          "limit": {
+            "type": "int",
+            "default": 10,
+            "required": false
+          },
+          "popular": {
+            "type": "bool",
+            "default": false,
+            "required": false
+          }
+        }
+      },
+      "stalker": {
+        "trailmap": "stocks.ba.stalker",
+        "parms": {
+          "user": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "limit": {
+            "type": "int",
+            "default": 30,
+            "required": false
+          }
+        }
+      },
+      "text_sent": {
+        "trailmap": "stocks.ba.text_sent",
+        "parms": {}
+      },
+      "trend": {
+        "trailmap": "stocks.ba.trend",
+        "parms": {
+          "hour": {
+            "type": "int",
+            "default": 0,
+            "required": false
+          },
+          "number": {
+            "type": "int",
+            "default": 10,
+            "required": false
+          }
+        }
+      },
+      "trending": {
+        "trailmap": "stocks.ba.trending",
+        "parms": {}
+      },
+      "watchlist": {
+        "trailmap": "stocks.ba.watchlist",
+        "parms": {
+          "limit": {
+            "type": "int",
+            "default": 5,
+            "required": false
+          }
+        }
+      },
+      "wsb": {
+        "trailmap": "stocks.ba.wsb",
+        "parms": {
+          "limit": {
+            "type": "int",
+            "default": 10,
+            "required": false
+          },
+          "new": {
+            "type": "bool",
+            "default": false,
+            "required": false
+          }
+        }
+      }
+    },
+    "ca": {
+      "balance": {
+        "trailmap": "stocks.ca.balance",
+        "parms": {
+          "timeframe": {
+            "type": "str",
+            "default": "2021",
+            "required": false
+          },
+          "quarter": {
+            "type": "bool",
+            "default": false,
+            "required": false
+          }
+        }
+      },
+      "cashflow": {
+        "trailmap": "stocks.ca.cashflow",
+        "parms": {
+          "timeframe": {
+            "type": "str",
+            "default": "2021",
+            "required": false
+          },
+          "quarter": {
+            "type": "bool",
+            "default": false,
+            "required": false
+          }
+        }
+      },
+      "hcorr": {
+        "trailmap": "stocks.ca.hcorr",
+        "parms": {
+          "candle_type": {
+            "type": "str",
+            "default": "a",
+            "required": false
+          }
+        }
+      },
+      "hist": {
+        "trailmap": "stocks.ca.hist",
+        "parms": {
+          "candle_type": {
+            "type": "str",
+            "default": "a",
+            "required": false
+          }
+        }
+      },
+      "income": {
+        "trailmap": "stocks.ca.income",
+        "parms": {
+          "timeframe": {
+            "type": "str",
+            "default": "2021",
+            "required": false
+          },
+          "quarter": {
+            "type": "bool",
+            "default": false,
+            "required": false
+          }
+        }
+      },
+      "scorr": {
+        "trailmap": "stocks.ca.scorr",
+        "parms": {}
+      },
+      "screener": {
+        "trailmap": "stocks.ca.screener",
+        "parms": {
+          "data_type": {
+            "type": "str",
+            "default": "overview",
+            "required": false
+          }
+        }
+      },
+      "sentiment": {
+        "trailmap": "stocks.ca.sentiment",
+        "parms": {}
+      },
+      "similar": {
+        "trailmap": "stocks.ca.similar",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "source": {
+            "type": "_empty",
+            "default": "Finviz",
+            "required": false
+          }
+        }
+      },
+      "volume": {
+        "trailmap": "stocks.ca.volume",
+        "parms": {}
+      }
+    },
+    "candle": {
+      "trailmap": "stocks.candle",
+      "parms": {
+        "symbol": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "data": {
+          "type": "DataFrame",
+          "default": null,
+          "required": false
+        },
+        "use_matplotlib": {
+          "type": "bool",
+          "default": true,
+          "required": false
+        },
+        "intraday": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "add_trend": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "asset_type": {
+          "type": "str",
+          "default": "",
+          "required": false
+        },
+        "interval": {
+          "type": "int",
+          "default": 1440,
+          "required": false
+        },
+        "prepost": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "source": {
+          "type": "str",
+          "default": "YahooFinance",
+          "required": false
+        },
+        "iexrange": {
+          "type": "str",
+          "default": "ytd",
+          "required": false
+        },
+        "weekly": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "monthly": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "raw": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "yscale": {
+          "type": "str",
+          "default": "linear",
+          "required": false
+        }
+      }
+    },
+    "dd": {
+      "analyst": {
+        "trailmap": "stocks.dd.analyst",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "arktrades": {
+        "trailmap": "stocks.dd.arktrades",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "customer": {
+        "trailmap": "stocks.dd.customer",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "limit": {
+            "type": "int",
+            "default": 50,
+            "required": false
+          }
+        }
+      },
+      "est": {
+        "trailmap": "stocks.dd.est",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "news": {
+        "trailmap": "stocks.dd.news",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "pt": {
+        "trailmap": "stocks.dd.pt",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "rating": {
+        "trailmap": "stocks.dd.rating",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "rot": {
+        "trailmap": "stocks.dd.rot",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "sec": {
+        "trailmap": "stocks.dd.sec",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "supplier": {
+        "trailmap": "stocks.dd.supplier",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "limit": {
+            "type": "int",
+            "default": 50,
+            "required": false
+          }
+        }
+      }
+    },
+    "disc": {
+      "active": {
+        "trailmap": "stocks.disc.active",
+        "parms": {}
+      },
+      "arkord": {
+        "trailmap": "stocks.disc.arkord",
+        "parms": {
+          "buys_only": {
+            "type": "bool",
+            "default": false,
+            "required": false
+          },
+          "sells_only": {
+            "type": "bool",
+            "default": false,
+            "required": false
+          },
+          "fund": {
+            "type": "str",
+            "default": "",
+            "required": false
+          }
+        }
+      },
+      "asc": {
+        "trailmap": "stocks.disc.asc",
+        "parms": {}
+      },
+      "dividends": {
+        "trailmap": "stocks.disc.dividends",
+        "parms": {
+          "date": {
+            "type": "str",
+            "default": null,
+            "required": false
+          }
+        }
+      },
+      "fipo": {
+        "trailmap": "stocks.disc.fipo",
+        "parms": {
+          "num_days_ahead": {
+            "type": "int",
+            "default": 5,
+            "required": false
+          }
+        }
+      },
+      "gainers": {
+        "trailmap": "stocks.disc.gainers",
+        "parms": {}
+      },
+      "gtech": {
+        "trailmap": "stocks.disc.gtech",
+        "parms": {}
+      },
+      "hotpenny": {
+        "trailmap": "stocks.disc.hotpenny",
+        "parms": {}
+      },
+      "ipo": {
+        "trailmap": "stocks.disc.ipo",
+        "parms": {}
+      },
+      "losers": {
+        "trailmap": "stocks.disc.losers",
+        "parms": {}
+      },
+      "lowfloat": {
+        "trailmap": "stocks.disc.lowfloat",
+        "parms": {}
+      },
+      "news": {
+        "trailmap": "stocks.disc.news",
+        "parms": {
+          "news_type": {
+            "type": "str",
+            "default": "Top-News",
+            "required": false
+          },
+          "limit": {
+            "type": "int",
+            "default": 5,
+            "required": false
+          }
+        }
+      },
+      "pipo": {
+        "trailmap": "stocks.disc.pipo",
+        "parms": {
+          "num_days_behind": {
+            "type": "int",
+            "default": 5,
+            "required": false
+          }
+        }
+      },
+      "rtat": {
+        "trailmap": "stocks.disc.rtat",
+        "parms": {}
+      },
+      "trending": {
+        "trailmap": "stocks.disc.trending",
+        "parms": {
+          "limit": {
+            "type": "int",
+            "default": 5,
+            "required": false
+          }
+        }
+      },
+      "ugs": {
+        "trailmap": "stocks.disc.ugs",
+        "parms": {}
+      },
+      "ulc": {
+        "trailmap": "stocks.disc.ulc",
+        "parms": {}
+      },
+      "upcoming": {
+        "trailmap": "stocks.disc.upcoming",
+        "parms": {
+          "limit": {
+            "type": "int",
+            "default": 10,
+            "required": false
+          }
+        }
+      }
+    },
+    "dps": {
+      "ctb": {
+        "trailmap": "stocks.dps.ctb",
+        "parms": {}
+      },
+      "dpotc": {
+        "trailmap": "stocks.dps.dpotc",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "ftd": {
+        "trailmap": "stocks.dps.ftd",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "limit": {
+            "type": "int",
+            "default": 0,
+            "required": false
+          }
+        }
+      },
+      "hsi": {
+        "trailmap": "stocks.dps.hsi",
+        "parms": {}
+      },
+      "pos": {
+        "trailmap": "stocks.dps.pos",
+        "parms": {
+          "sortby": {
+            "type": "str",
+            "default": "dpp_dollar",
+            "required": false
+          },
+          "ascend": {
+            "type": "bool",
+            "default": false,
+            "required": false
+          }
+        }
+      },
+      "prom": {
+        "trailmap": "stocks.dps.prom",
+        "parms": {
+          "limit": {
+            "type": "int",
+            "default": 1000,
+            "required": false
+          },
+          "tier_ats": {
+            "type": "str",
+            "default": "T1",
+            "required": false
+          }
+        }
+      },
+      "psi_q": {
+        "trailmap": "stocks.dps.psi_q",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "nyse": {
+            "type": "bool",
+            "default": false,
+            "required": false
+          }
+        }
+      },
+      "psi_sg": {
+        "trailmap": "stocks.dps.psi_sg",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "shorted": {
+        "trailmap": "stocks.dps.shorted",
+        "parms": {}
+      },
+      "sidtc": {
+        "trailmap": "stocks.dps.sidtc",
+        "parms": {
+          "sortby": {
+            "type": "str",
+            "default": "float",
+            "required": false
+          }
+        }
+      },
+      "spos": {
+        "trailmap": "stocks.dps.spos",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      }
+    },
+    "fa": {
+      "analysis": {
+        "trailmap": "stocks.fa.analysis",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "balance": {
+        "trailmap": "stocks.fa.balance",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "quarterly": {
+            "type": "bool",
+            "default": false,
+            "required": false
+          },
+          "ratios": {
+            "type": "bool",
+            "default": false,
+            "required": false
+          },
+          "source": {
+            "type": "str",
+            "default": "YahooFinance",
+            "required": false
+          },
+          "limit": {
+            "type": "int",
+            "default": 10,
+            "required": false
+          }
+        }
+      },
+      "cal": {
+        "trailmap": "stocks.fa.cal",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "cash": {
+        "trailmap": "stocks.fa.cash",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "quarterly": {
+            "type": "bool",
+            "default": false,
+            "required": false
+          },
+          "ratios": {
+            "type": "bool",
+            "default": false,
+            "required": false
+          },
+          "source": {
+            "type": "str",
+            "default": "YahooFinance",
+            "required": false
+          },
+          "limit": {
+            "type": "int",
+            "default": 10,
+            "required": false
+          }
+        }
+      },
+      "data": {
+        "trailmap": "stocks.fa.data",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "dcf": {
+        "trailmap": "stocks.fa.dcf",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "limit": {
+            "type": "int",
+            "default": 5,
+            "required": false
+          },
+          "quarterly": {
+            "type": "bool",
+            "default": false,
+            "required": false
+          }
+        }
+      },
+      "divs": {
+        "trailmap": "stocks.fa.divs",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "dupont": {
+        "trailmap": "stocks.fa.dupont",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "earnings": {
+        "trailmap": "stocks.fa.earnings",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "source": {
+            "type": "str",
+            "default": "YahooFinance",
+            "required": false
+          },
+          "quarterly": {
+            "type": "bool",
+            "default": false,
+            "required": false
+          }
+        }
+      },
+      "enterprise": {
+        "trailmap": "stocks.fa.enterprise",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "limit": {
+            "type": "int",
+            "default": 5,
+            "required": false
+          },
+          "quarterly": {
+            "type": "bool",
+            "default": false,
+            "required": false
+          }
+        }
+      },
+      "fama_coe": {
+        "trailmap": "stocks.fa.fama_coe",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "fama_raw": {
+        "trailmap": "stocks.fa.fama_raw",
+        "parms": {}
+      },
+      "fraud": {
+        "trailmap": "stocks.fa.fraud",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "detail": {
+            "type": "bool",
+            "default": false,
+            "required": false
+          }
+        }
+      },
+      "growth": {
+        "trailmap": "stocks.fa.growth",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "limit": {
+            "type": "int",
+            "default": 5,
+            "required": false
+          },
+          "quarterly": {
+            "type": "bool",
+            "default": false,
+            "required": false
+          }
+        }
+      },
+      "historical_5": {
+        "trailmap": "stocks.fa.historical_5",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "hq": {
+        "trailmap": "stocks.fa.hq",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "income": {
+        "trailmap": "stocks.fa.income",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "quarterly": {
+            "type": "bool",
+            "default": false,
+            "required": false
+          },
+          "ratios": {
+            "type": "bool",
+            "default": false,
+            "required": false
+          },
+          "source": {
+            "type": "str",
+            "default": "YahooFinance",
+            "required": false
+          },
+          "limit": {
+            "type": "int",
+            "default": 10,
+            "required": false
+          }
+        }
+      },
+      "info": {
+        "trailmap": "stocks.fa.info",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "key": {
+        "trailmap": "stocks.fa.key",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "metrics": {
+        "trailmap": "stocks.fa.metrics",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "limit": {
+            "type": "int",
+            "default": 5,
+            "required": false
+          },
+          "quarterly": {
+            "type": "bool",
+            "default": false,
+            "required": false
+          }
+        }
+      },
+      "mgmt": {
+        "trailmap": "stocks.fa.mgmt",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "mktcap": {
+        "trailmap": "stocks.fa.mktcap",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "overview": {
+        "trailmap": "stocks.fa.overview",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "profile": {
+        "trailmap": "stocks.fa.profile",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "quote": {
+        "trailmap": "stocks.fa.quote",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "ratios": {
+        "trailmap": "stocks.fa.ratios",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "limit": {
+            "type": "int",
+            "default": 5,
+            "required": false
+          },
+          "quarterly": {
+            "type": "bool",
+            "default": false,
+            "required": false
+          }
+        }
+      },
+      "score": {
+        "trailmap": "stocks.fa.score",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "shrs": {
+        "trailmap": "stocks.fa.shrs",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "holder": {
+            "type": "str",
+            "default": "institutional",
+            "required": false
+          }
+        }
+      },
+      "similar_dfs": {
+        "trailmap": "stocks.fa.similar_dfs",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "n": {
+            "type": "int",
+            "default": null,
+            "required": true
+          },
+          "no_filter": {
+            "type": "bool",
+            "default": false,
+            "required": false
+          }
+        }
+      },
+      "splits": {
+        "trailmap": "stocks.fa.splits",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "sust": {
+        "trailmap": "stocks.fa.sust",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "website": {
+        "trailmap": "stocks.fa.website",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      }
+    },
+    "gov": {
+      "contracts": {
+        "trailmap": "stocks.gov.contracts",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "past_transaction_days": {
+            "type": "int",
+            "default": 10,
+            "required": false
+          }
+        }
+      },
+      "government_trading": {
+        "trailmap": "stocks.gov.government_trading",
+        "parms": {
+          "gov_type": {
+            "type": "str",
+            "default": "congress",
+            "required": false
+          },
+          "symbol": {
+            "type": "str",
+            "default": "",
+            "required": false
+          }
+        }
+      },
+      "gtrades": {
+        "trailmap": "stocks.gov.gtrades",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "gov_type": {
+            "type": "str",
+            "default": "congress",
+            "required": false
+          },
+          "past_transactions_months": {
+            "type": "int",
+            "default": 6,
+            "required": false
+          }
+        }
+      },
+      "histcont": {
+        "trailmap": "stocks.gov.histcont",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "lastcontracts": {
+        "trailmap": "stocks.gov.lastcontracts",
+        "parms": {
+          "past_transaction_days": {
+            "type": "int",
+            "default": 2,
+            "required": false
+          }
+        }
+      },
+      "lasttrades": {
+        "trailmap": "stocks.gov.lasttrades",
+        "parms": {
+          "gov_type": {
+            "type": "str",
+            "default": "congress",
+            "required": false
+          },
+          "limit": {
+            "type": "int",
+            "default": -1,
+            "required": false
+          },
+          "representative": {
+            "type": "str",
+            "default": "",
+            "required": false
+          }
+        }
+      },
+      "lobbying": {
+        "trailmap": "stocks.gov.lobbying",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "limit": {
+            "type": "int",
+            "default": 10,
+            "required": false
+          }
+        }
+      },
+      "qtrcontracts": {
+        "trailmap": "stocks.gov.qtrcontracts",
+        "parms": {
+          "analysis": {
+            "type": "str",
+            "default": "total",
+            "required": false
+          },
+          "limit": {
+            "type": "int",
+            "default": 5,
+            "required": false
+          }
+        }
+      },
+      "topbuys": {
+        "trailmap": "stocks.gov.topbuys",
+        "parms": {
+          "gov_type": {
+            "type": "str",
+            "default": "congress",
+            "required": false
+          },
+          "past_transactions_months": {
+            "type": "int",
+            "default": 6,
+            "required": false
+          }
+        }
+      },
+      "toplobbying": {
+        "trailmap": "stocks.gov.toplobbying",
+        "parms": {}
+      },
+      "topsells": {
+        "trailmap": "stocks.gov.topsells",
+        "parms": {
+          "gov_type": {
+            "type": "str",
+            "default": "congress",
+            "required": false
+          },
+          "past_transactions_months": {
+            "type": "int",
+            "default": 6,
+            "required": false
+          }
+        }
+      }
+    },
+    "ins": {
+      "act": {
+        "trailmap": "stocks.ins.act",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "lins": {
+        "trailmap": "stocks.ins.lins",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "print_insider_data": {
+        "trailmap": "stocks.ins.print_insider_data",
+        "parms": {
+          "type_insider": {
+            "type": "str",
+            "default": "lcb",
+            "required": false
+          },
+          "limit": {
+            "type": "int",
+            "default": 10,
+            "required": false
+          }
+        }
+      }
+    },
+    "load": {
+      "trailmap": "stocks.load",
+      "parms": {
+        "symbol": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "interval": {
+          "type": "int",
+          "default": 1440,
+          "required": false
+        },
+        "prepost": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "source": {
+          "type": "str",
+          "default": "YahooFinance",
+          "required": false
+        },
+        "iexrange": {
+          "type": "str",
+          "default": "ytd",
+          "required": false
+        },
+        "weekly": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "monthly": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "verbose": {
+          "type": "bool",
+          "default": true,
+          "required": false
+        }
+      }
+    },
+    "options": {
+      "chains": {
+        "trailmap": "stocks.options.chains",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "source": {
+            "type": "str",
+            "default": "Nasdaq",
+            "required": false
+          }
+        }
+      },
+      "dte": {
+        "trailmap": "stocks.options.dte",
+        "parms": {
+          "date_value": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "expirations": {
+        "trailmap": "stocks.options.expirations",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "source": {
+            "type": "str",
+            "default": "Nasdaq",
+            "required": false
+          }
+        }
+      },
+      "generate_data": {
+        "trailmap": "stocks.options.generate_data",
+        "parms": {
+          "current_price": {
+            "type": "float",
+            "default": null,
+            "required": true
+          },
+          "underlying": {
+            "type": "int",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "grhist": {
+        "trailmap": "stocks.options.grhist",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "expiry": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "chain_id": {
+            "type": "str",
+            "default": "",
+            "required": false
+          },
+          "put": {
+            "type": "bool",
+            "default": false,
+            "required": false
+          }
+        }
+      },
+      "hist": {
+        "trailmap": "stocks.options.hist",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "exp": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "call": {
+            "type": "bool",
+            "default": true,
+            "required": false
+          },
+          "source": {
+            "type": "_empty",
+            "default": "ChartExchange",
+            "required": false
+          }
+        }
+      },
+      "hist_ce": {
+        "trailmap": "stocks.options.hist_ce",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": "GME",
+            "required": false
+          },
+          "date": {
+            "type": "str",
+            "default": "2021-02-05",
+            "required": false
+          },
+          "call": {
+            "type": "bool",
+            "default": true,
+            "required": false
+          }
+        }
+      },
+      "info": {
+        "trailmap": "stocks.options.info",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "last_price": {
+        "trailmap": "stocks.options.last_price",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "pcr": {
+        "trailmap": "stocks.options.pcr",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "window": {
+            "type": "int",
+            "default": 30,
+            "required": false
+          }
+        }
+      },
+      "process_chains": {
+        "trailmap": "stocks.options.process_chains",
+        "parms": {
+          "response": {
+            "type": "Response",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "screen": {
+        "check_presets": {
+          "trailmap": "stocks.options.screen.check_presets",
+          "parms": {
+            "preset_dict": {
+              "type": "dict",
+              "default": null,
+              "required": true
+            }
+          }
+        },
+        "screener_output": {
+          "trailmap": "stocks.options.screen.screener_output",
+          "parms": {
+            "preset": {
+              "type": "str",
+              "default": null,
+              "required": true
+            }
+          }
+        }
+      },
+      "unu": {
+        "trailmap": "stocks.options.unu",
+        "parms": {
+          "limit": {
+            "type": "int",
+            "default": 100,
+            "required": false
+          }
+        }
+      },
+      "vsurf": {
+        "trailmap": "stocks.options.vsurf",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      }
+    },
+    "process_candle": {
+      "trailmap": "stocks.process_candle",
+      "parms": {
+        "data": {
+          "type": "DataFrame",
+          "default": null,
+          "required": true
+        }
+      }
+    },
+    "qa": {
+      "beta": {
+        "trailmap": "stocks.qa.beta",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "ref_symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "data": {
+            "type": "DataFrame",
+            "default": null,
+            "required": false
+          },
+          "ref_data": {
+            "type": "DataFrame",
+            "default": null,
+            "required": false
+          },
+          "interval": {
+            "type": "int",
+            "default": 1440,
+            "required": false
+          }
+        }
+      },
+      "capm": {
+        "trailmap": "stocks.qa.capm",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "fama_raw": {
+        "trailmap": "stocks.qa.fama_raw",
+        "parms": {}
+      },
+      "historical_5": {
+        "trailmap": "stocks.qa.historical_5",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      }
+    },
+    "quote": {
+      "trailmap": "stocks.quote",
+      "parms": {
+        "symbol": {
+          "type": "str",
+          "default": null,
+          "required": true
+        }
+      }
+    },
+    "screener": {
+      "historical": {
+        "trailmap": "stocks.screener.historical",
+        "parms": {
+          "preset_loaded": {
+            "type": "str",
+            "default": "top_gainers",
+            "required": false
+          },
+          "limit": {
+            "type": "int",
+            "default": 10,
+            "required": false
+          },
+          "start_date": {
+            "type": "str",
+            "default": "2022-06-08",
+            "required": false
+          },
+          "type_candle": {
+            "type": "str",
+            "default": "a",
+            "required": false
+          },
+          "normalize": {
+            "type": "bool",
+            "default": true,
+            "required": false
+          }
+        }
+      },
+      "screener_data": {
+        "trailmap": "stocks.screener.screener_data",
+        "parms": {
+          "preset_loaded": {
+            "type": "str",
+            "default": "top_gainers",
+            "required": false
+          },
+          "data_type": {
+            "type": "str",
+            "default": "overview",
+            "required": false
+          },
+          "limit": {
+            "type": "int",
+            "default": 10,
+            "required": false
+          },
+          "ascend": {
+            "type": "bool",
+            "default": false,
+            "required": false
+          }
+        }
+      }
+    },
+    "search": {
+      "trailmap": "stocks.search",
+      "parms": {
+        "query": {
+          "type": "str",
+          "default": "",
+          "required": false
+        },
+        "country": {
+          "type": "str",
+          "default": "",
+          "required": false
+        },
+        "sector": {
+          "type": "str",
+          "default": "",
+          "required": false
+        },
+        "industry": {
+          "type": "str",
+          "default": "",
+          "required": false
+        },
+        "exchange_country": {
+          "type": "str",
+          "default": "",
+          "required": false
+        },
+        "limit": {
+          "type": "int",
+          "default": 0,
+          "required": false
+        },
+        "export": {
+          "type": "str",
+          "default": "",
+          "required": false
+        }
+      }
+    },
+    "sia": {
+      "countries": {
+        "trailmap": "stocks.sia.countries",
+        "parms": {
+          "industry": {
+            "type": "str",
+            "default": "",
+            "required": false
+          },
+          "sector": {
+            "type": "str",
+            "default": "",
+            "required": false
+          }
+        }
+      },
+      "cpci": {
+        "trailmap": "stocks.sia.cpci",
+        "parms": {
+          "industry": {
+            "type": "str",
+            "default": "Internet Content & Information",
+            "required": false
+          },
+          "mktcap": {
+            "type": "str",
+            "default": "Large",
+            "required": false
+          },
+          "exclude_exchanges": {
+            "type": "bool",
+            "default": true,
+            "required": false
+          }
+        }
+      },
+      "cpcs": {
+        "trailmap": "stocks.sia.cpcs",
+        "parms": {
+          "sector": {
+            "type": "str",
+            "default": "Technology",
+            "required": false
+          },
+          "mktcap": {
+            "type": "str",
+            "default": "Large",
+            "required": false
+          },
+          "exclude_exchanges": {
+            "type": "bool",
+            "default": true,
+            "required": false
+          }
+        }
+      },
+      "cpic": {
+        "trailmap": "stocks.sia.cpic",
+        "parms": {
+          "country": {
+            "type": "str",
+            "default": "United States",
+            "required": false
+          },
+          "mktcap": {
+            "type": "str",
+            "default": "Large",
+            "required": false
+          },
+          "exclude_exchanges": {
+            "type": "bool",
+            "default": true,
+            "required": false
+          }
+        }
+      },
+      "cpis": {
+        "trailmap": "stocks.sia.cpis",
+        "parms": {
+          "sector": {
+            "type": "str",
+            "default": "Technology",
+            "required": false
+          },
+          "mktcap": {
+            "type": "str",
+            "default": "Large",
+            "required": false
+          },
+          "exclude_exchanges": {
+            "type": "bool",
+            "default": true,
+            "required": false
+          }
+        }
+      },
+      "cps": {
+        "trailmap": "stocks.sia.cps",
+        "parms": {
+          "country": {
+            "type": "str",
+            "default": "United States",
+            "required": false
+          },
+          "mktcap": {
+            "type": "str",
+            "default": "Large",
+            "required": false
+          },
+          "exclude_exchanges": {
+            "type": "bool",
+            "default": true,
+            "required": false
+          }
+        }
+      },
+      "filter_stocks": {
+        "trailmap": "stocks.sia.filter_stocks",
+        "parms": {
+          "country": {
+            "type": "str",
+            "default": null,
+            "required": false
+          },
+          "sector": {
+            "type": "str",
+            "default": null,
+            "required": false
+          },
+          "industry": {
+            "type": "str",
+            "default": null,
+            "required": false
+          },
+          "marketcap": {
+            "type": "str",
+            "default": "",
+            "required": false
+          },
+          "exclude_exchanges": {
+            "type": "bool",
+            "default": true,
+            "required": false
+          }
+        }
+      },
+      "industries": {
+        "trailmap": "stocks.sia.industries",
+        "parms": {
+          "country": {
+            "type": "str",
+            "default": "",
+            "required": false
+          },
+          "sector": {
+            "type": "str",
+            "default": "",
+            "required": false
+          }
+        }
+      },
+      "maketcap": {
+        "trailmap": "stocks.sia.maketcap",
+        "parms": {}
+      },
+      "sectors": {
+        "trailmap": "stocks.sia.sectors",
+        "parms": {
+          "industry": {
+            "type": "str",
+            "default": "",
+            "required": false
+          },
+          "country": {
+            "type": "str",
+            "default": "",
+            "required": false
+          }
+        }
+      },
+      "stocks_data": {
+        "trailmap": "stocks.sia.stocks_data",
+        "parms": {
+          "finance_key": {
+            "type": "str",
+            "default": "ncf",
+            "required": false
+          },
+          "stocks_data": {
+            "type": "dict",
+            "default": null,
+            "required": false
+          },
+          "period": {
+            "type": "str",
+            "default": "annual",
+            "required": false
+          },
+          "symbol": {
+            "type": "str",
+            "default": "USD",
+            "required": false
+          }
+        }
+      }
+    },
+    "ta": {
+      "recom": {
+        "trailmap": "stocks.ta.recom",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          },
+          "screener": {
+            "type": "str",
+            "default": "america",
+            "required": false
+          },
+          "exchange": {
+            "type": "str",
+            "default": "",
+            "required": false
+          },
+          "interval": {
+            "type": "str",
+            "default": "",
+            "required": false
+          }
+        }
+      },
+      "rsp": {
+        "trailmap": "stocks.ta.rsp",
+        "parms": {
+          "s_ticker": {
+            "type": "str",
+            "default": "",
+            "required": false
+          }
+        }
+      },
+      "summary": {
+        "trailmap": "stocks.ta.summary",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "view": {
+        "trailmap": "stocks.ta.view",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      }
+    },
+    "th": {
+      "all": {
+        "trailmap": "stocks.th.all",
+        "parms": {}
+      },
+      "check_if_open": {
+        "trailmap": "stocks.th.check_if_open",
+        "parms": {
+          "bursa": {
+            "type": "DataFrame",
+            "default": null,
+            "required": true
+          },
+          "exchange": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "closed": {
+        "trailmap": "stocks.th.closed",
+        "parms": {}
+      },
+      "exchange": {
+        "trailmap": "stocks.th.exchange",
+        "parms": {
+          "symbol": {
+            "type": "str",
+            "default": null,
+            "required": true
+          }
+        }
+      },
+      "open": {
+        "trailmap": "stocks.th.open",
+        "parms": {}
+      }
+    },
+    "tob": {
+      "trailmap": "stocks.tob",
+      "parms": {
+        "symbol": {
+          "type": "str",
+          "default": null,
+          "required": true
+        },
+        "exchange": {
+          "type": "str",
+          "default": "BZX",
+          "required": false
+        }
+      }
+    }
+  },
+  "ta": {
+    "ad": {
+      "trailmap": "ta.ad",
+      "parms": {
+        "data": {
+          "type": "DataFrame",
+          "default": null,
+          "required": true
+        },
+        "use_open": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        }
+      }
+    },
+    "adosc": {
+      "trailmap": "ta.adosc",
+      "parms": {
+        "data": {
+          "type": "DataFrame",
+          "default": null,
+          "required": true
+        },
+        "use_open": {
+          "type": "bool",
+          "default": false,
+          "required": false
+        },
+        "fast": {
+          "type": "int",
+          "default": 3,
+          "required": false
+        },
+        "slow": {
+          "type": "int",
+          "default": 10,
+          "required": false
+        }
+      }
+    },
+    "adx": {
+      "trailmap": "ta.adx",
+      "parms": {
+        "data": {
+          "type": "DataFrame",
+          "default": null,
+          "required": true
+        },
+        "window": {
+          "type": "int",
+          "default": 14,
+          "required": false
+        },
+        "scalar": {
+          "type": "int",
+          "default": 100,
+          "required": false
+        },
+        "drift": {
+          "type": "int",
+          "default": 1,
+          "required": false
+        }
+      }
+    },
+    "aroon": {
+      "trailmap": "ta.aroon",
+      "parms": {
+        "data": {
+          "type": "DataFrame",
+          "default": null,
+          "required": true
+        },
+        "window": {
+          "type": "int",
+          "default": 25,
+          "required": false
+        },
+        "scalar": {
+          "type": "int",
+          "default": 100,
+          "required": false
+        }
+      }
+    },
+    "atr": {
+      "trailmap": "ta.atr",
+      "parms": {
+        "data": {
+          "type": "DataFrame",
+          "default": null,
+          "required": true
+        },
+        "window": {
+          "type": "int",
+          "default": 14,
+          "required": false
+        },
+        "mamode": {
+          "type": "str",
+          "default": "ema",
+          "required": false
+        },
+        "offset": {
+          "type": "int",
+          "default": 0,
+          "required": false
+        }
+      }
+    },
+    "bbands": {
+      "trailmap": "ta.bbands",
+      "parms": {
+        "data": {
+          "type": "DataFrame",
+          "default": null,
+          "required": true
+        },
+        "window": {
+          "type": "int",
+          "default": 15,
+          "required": false
+        },
+        "n_std": {
+          "type": "float",
+          "default": 2,
+          "required": false
+        },
+        "mamode": {
+          "type": "str",
+          "default": "ema",
+          "required": false
+        }
+      }
+    },
+    "cci": {
+      "trailmap": "ta.cci",
+      "parms": {
+        "data": {
+          "type": "DataFrame",
+          "default": null,
+          "required": true
+        },
+        "window": {
+          "type": "int",
+          "default": 14,
+          "required": false
+        },
+        "scalar": {
+          "type": "float",
+          "default": 0.0015,
+          "required": false
+        }
+      }
+    },
+    "cg": {
+      "trailmap": "ta.cg",
+      "parms": {
+        "values": {
+          "type": "Series",
+          "default": null,
+          "required": true
+        },
+        "window": {
+          "type": "int",
+          "default": null,
+          "required": true
+        }
+      }
+    },
+    "clenow": {
+      "trailmap": "ta.clenow",
+      "parms": {
+        "values": {
+          "type": "Series",
+          "default": null,
+          "required": true
+        },
+        "window": {
+          "type": "int",
+          "default": 90,
+          "required": false
+        }
+      }
+    },
+    "demark": {
+      "trailmap": "ta.demark",
+      "parms": {
+        "values": {
+          "type": "Series",
+          "default": null,
+          "required": true
+        }
+      }
+    },
+    "donchian": {
+      "trailmap": "ta.donchian",
+      "parms": {
+        "data": {
+          "type": "DataFrame",
+          "default": null,
+          "required": true
+        },
+        "upper_length": {
+          "type": "int",
+          "default": 20,
+          "required": false
+        },
+        "lower_length": {
+          "type": "int",
+          "default": 20,
+          "required": false
+        }
+      }
+    },
+    "ema": {
+      "trailmap": "ta.ema",
+      "parms": {
+        "data": {
+          "type": "Series",
+          "default": null,
+          "required": true
+        },
+        "length": {
+          "type": "int",
+          "default": 50,
+          "required": false
+        },
+        "offset": {
+          "type": "int",
+          "default": 0,
+          "required": false
+        }
+      }
+    },
+    "fib": {
+      "trailmap": "ta.fib",
+      "parms": {
+        "data": {
+          "type": "DataFrame",
+          "default": null,
+          "required": true
+        },
+        "limit": {
+          "type": "int",
+          "default": 120,
+          "required": false
+        }
+      }
+    },
+    "fisher": {
+      "trailmap": "ta.fisher",
+      "parms": {
+        "data": {
+          "type": "DataFrame",
+          "default": null,
+          "required": true
+        },
+        "window": {
+          "type": "int",
+          "default": 14,
+          "required": false
+        }
+      }
+    },
+    "hma": {
+      "trailmap": "ta.hma",
+      "parms": {
+        "data": {
+          "type": "Series",
+          "default": null,
+          "required": true
+        },
+        "length": {
+          "type": "int",
+          "default": 50,
+          "required": false
+        },
+        "offset": {
+          "type": "int",
+          "default": 0,
+          "required": false
+        }
+      }
+    },
+    "kc": {
+      "trailmap": "ta.kc",
+      "parms": {
+        "data": {
+          "type": "DataFrame",
+          "default": null,
+          "required": true
+        },
+        "window": {
+          "type": "int",
+          "default": 20,
+          "required": false
+        },
+        "scalar": {
+          "type": "float",
+          "default": 2,
+          "required": false
+        },
+        "mamode": {
+          "type": "str",
+          "default": "ema",
+          "required": false
+        },
+        "offset": {
+          "type": "int",
+          "default": 0,
+          "required": false
+        }
+      }
+    },
+    "ma": {
+      "trailmap": "ta.ma",
+      "parms": {
+        "data": {
+          "type": "Series",
+          "default": null,
+          "required": true
+        },
+        "offset": {
+          "type": "int",
+          "default": 0,
+          "required": false
+        },
+        "ma_type": {
+          "type": "str",
+          "default": "EMA",
+          "required": false
+        },
+        "symbol": {
+          "type": "str",
+          "default": "",
+          "required": false
+        },
+        "export": {
+          "type": "str",
+          "default": "",
+          "required": false
+        }
+      }
+    },
+    "macd": {
+      "trailmap": "ta.macd",
+      "parms": {
+        "data": {
+          "type": "Series",
+          "default": null,
+          "required": true
+        },
+        "n_fast": {
+          "type": "int",
+          "default": 12,
+          "required": false
+        },
+        "n_slow": {
+          "type": "int",
+          "default": 26,
+          "required": false
+        },
+        "n_signal": {
+          "type": "int",
+          "default": 9,
+          "required": false
+        }
+      }
+    },
+    "obv": {
+      "trailmap": "ta.obv",
+      "parms": {
+        "data": {
+          "type": "DataFrame",
+          "default": null,
+          "required": true
+        }
+      }
+    },
+    "rsi": {
+      "trailmap": "ta.rsi",
+      "parms": {
+        "data": {
+          "type": "Series",
+          "default": null,
+          "required": true
+        },
+        "window": {
+          "type": "int",
+          "default": 14,
+          "required": false
+        },
+        "scalar": {
+          "type": "float",
+          "default": 100,
+          "required": false
+        },
+        "drift": {
+          "type": "int",
+          "default": 1,
+          "required": false
+        }
+      }
+    },
+    "sma": {
+      "trailmap": "ta.sma",
+      "parms": {
+        "data": {
+          "type": "Series",
+          "default": null,
+          "required": true
+        },
+        "length": {
+          "type": "int",
+          "default": 50,
+          "required": false
+        },
+        "offset": {
+          "type": "int",
+          "default": 0,
+          "required": false
+        }
+      }
+    },
+    "stoch": {
+      "trailmap": "ta.stoch",
+      "parms": {
+        "data": {
+          "type": "DataFrame",
+          "default": null,
+          "required": true
+        },
+        "fastkperiod": {
+          "type": "int",
+          "default": 14,
+          "required": false
+        },
+        "slowdperiod": {
+          "type": "int",
+          "default": 3,
+          "required": false
+        },
+        "slowkperiod": {
+          "type": "int",
+          "default": 3,
+          "required": false
+        }
+      }
+    },
+    "vwap": {
+      "trailmap": "ta.vwap",
+      "parms": {
+        "data": {
+          "type": "Series",
+          "default": null,
+          "required": true
+        },
+        "offset": {
+          "type": "int",
+          "default": 0,
+          "required": false
+        }
+      }
+    },
+    "wma": {
+      "trailmap": "ta.wma",
+      "parms": {
+        "data": {
+          "type": "Series",
+          "default": null,
+          "required": true
+        },
+        "length": {
+          "type": "int",
+          "default": 50,
+          "required": false
+        },
+        "offset": {
+          "type": "int",
+          "default": 0,
+          "required": false
+        }
+      }
+    },
+    "zlma": {
+      "trailmap": "ta.zlma",
+      "parms": {
+        "data": {
+          "type": "Series",
+          "default": null,
+          "required": true
+        },
+        "length": {
+          "type": "int",
+          "default": 50,
+          "required": false
+        },
+        "offset": {
+          "type": "int",
+          "default": 0,
+          "required": false
+        }
+      }
+    }
+  }
+}
