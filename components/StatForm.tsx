@@ -52,7 +52,7 @@ export default function StatForm() {
   }
 
   return (
-    <div className="StatForm w-full p-4">
+    <div className="StatForm w-full h-max p-4">
       <h3 className="text-xl font-bold mb-4">{selected?.trailmap}</h3>
 
       <FormGroup>
