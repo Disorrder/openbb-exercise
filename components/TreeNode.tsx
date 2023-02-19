@@ -1,10 +1,10 @@
 import React from "react";
 import { IconChevronDown, IconChevronRight } from "@tabler/icons-react";
+import cn from "classnames";
 
 import { useTree } from "../context/tree.context";
 import { IStat } from "../utils/stats.type";
 import { Dictionary, TrailNode } from "../utils/transform";
-import cn from "classnames";
 
 interface Props {
   value: Dictionary<TrailNode<IStat>>[number];
@@ -15,13 +15,14 @@ export default function TreeNode({ value, level }: Props) {
   const { selected, setSelected } = useTree();
   const [open, setOpen] = React.useState(false);
 
-  const hasChildren = "children" in value && value.children?.length > 0;
+  const hasChildren = "children" in value;
 
   const className = cn(
     "TreeNode",
     "flex items-center gap-2 px-4 py-2 cursor-pointer transition-colors",
     `pl-${level * 4}`,
-    "hover:bg-sky-100"
+    "hover:bg-sky-50",
+    selected?.key === value.key && "bg-sky-100"
   );
 
   function renderIcon() {
@@ -33,7 +34,9 @@ export default function TreeNode({ value, level }: Props) {
   }
 
   function handleClick() {
-    hasChildren ? setOpen(!open) : setSelected(value);
+    if ("children" in value) return setOpen(!open);
+
+    setSelected(value.trailmap === selected?.trailmap ? null : value);
   }
 
   return (

@@ -1,9 +1,16 @@
-import { createContext, useContext, useMemo, useState } from 'react';
+import { createContext, useContext, useMemo, useState } from "react";
+import { IStat } from "../utils/stats.type";
+import { DictLeaf, TrailNode } from "../utils/transform";
 
-const Context = createContext<any>({});
+const Context = createContext({
+  selected: null as DictLeaf<TrailNode<IStat>> | null,
+  setSelected: (value: DictLeaf<TrailNode<IStat>> | null) => {},
+});
 
 export function TreeProvider({ children }) {
-  const [selected, setSelected] = useState<string | null>(null);
+  const [selected, setSelected] = useState<DictLeaf<TrailNode<IStat>> | null>(
+    null
+  );
 
   const value = useMemo(
     () => ({

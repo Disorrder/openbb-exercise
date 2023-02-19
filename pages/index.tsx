@@ -22,7 +22,10 @@ export default function Home(): React.ReactElement {
           <title>OpenBB Exercise</title>
         </Head>
 
-        <h2 className={styles.title}>OpenBB Exercise</h2>
+        <div>
+          <h2 className={styles.title}>OpenBB Exercise</h2>
+          <div className={styles.description}>(by Aleksandr Azarov)</div>
+        </div>
 
         <div className={styles.content}>
           <aside className={styles.sidebar}>

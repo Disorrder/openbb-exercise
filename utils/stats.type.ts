@@ -3,10 +3,17 @@ export interface IStat {
 }
 
 export interface IParm {
-  type: ParmType,
-  default: ParmValue,
+  type: ParmType;
+  default: ParmValue;
   required: boolean;
 }
 
-export type ParmType = "_empty" | "int" | "float" | "str" | "PortfolioEngine"; // TODO: extract all types
+export type ParmType =
+  | "_empty"
+  | "bool"
+  | "int"
+  | "float"
+  | "str"
+  | "DataFrame"
+  | "PortfolioEngine"; // TODO: extract all types
 export type ParmValue = null | number | string;
